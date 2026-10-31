@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const modules = [
   {
-    number: "01", id: "media", eyebrow: "MEDIA ARCHAEOLOGY", title: "媒介考古",
+    number: "01", href: "/media", eyebrow: "MEDIA ARCHAEOLOGY", title: "媒介考古",
   },
   {
-    number: "02", id: "timeline", eyebrow: "MEMORY REVISITED", title: "时间回放",
+    number: "02", href: "/timeline", eyebrow: "MEMORY REVISITED", title: "时间回放",
   },
   {
-    number: "03", id: "archive", eyebrow: "THE LIVING ARCHIVE", title: "动态档案",
+    number: "03", href: "/archive", eyebrow: "THE LIVING ARCHIVE", title: "动态档案",
   },
 ];
 
@@ -40,11 +40,12 @@ export function Hero() {
         <span>NOW PLAYING</span>
         <h1>THE MADONNA ARCHIVE</h1>
         <p>CELEBRITY · AGEING · FAN NOSTALGIA</p>
+        <p className="record-home-summary">一座关于名人、衰老与粉丝怀旧的互动记忆档案。</p>
       </div>
 
       <nav className="record-entry-menu" aria-label="选择互动模块">
           {modules.map((module) => (
-            <a className="record-entry" href={`#${module.id}`} key={module.id}>
+            <a className="record-entry" href={module.href} key={module.href}>
               <span>{module.number}</span>
               <strong>{module.title}</strong>
               <small>{module.eyebrow}</small>

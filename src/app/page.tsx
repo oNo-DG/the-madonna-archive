@@ -1,25 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
-import { MediaArchaeology } from "@/components/sections/MediaArchaeology";
-import { ChapterResearch } from "@/components/sections/ChapterResearch";
-import { MemoryTimeline } from "@/components/sections/MemoryTimeline";
-import { ArchiveExplorer } from "@/components/sections/ArchiveExplorer";
-import { CaseStudies } from "@/components/sections/CaseStudies";
-import { References } from "@/components/sections/References";
-import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <>
-      <main>
-        <Hero />
-        <MediaArchaeology />
-        <ChapterResearch />
-        <MemoryTimeline />
-        <ArchiveExplorer />
-        <CaseStudies />
-        <References />
-      </main>
-      <Footer />
-    </>
+    <main className="home-only"><Hero /></main>
   );
 }
