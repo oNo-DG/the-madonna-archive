@@ -2,16 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const links = [
-  ["MEDIA", "media"],
-  ["TIMELINE", "timeline"],
-  ["ARCHIVE", "archive"],
-  ["SOURCES", "references"],
-];
-
 export function Navigation() {
   const [progress, setProgress] = useState(0);
-  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const update = () => {
@@ -30,16 +22,7 @@ export function Navigation() {
         <a className="nav-mark" href="#top" aria-label="返回顶部">
           M<span>/</span>M
         </a>
-        <button className="menu-toggle" onClick={() => setOpen(!open)} aria-expanded={open}>
-          {open ? "CLOSE" : "INDEX"}
-        </button>
-        <nav className={open ? "nav-links is-open" : "nav-links"} aria-label="主要导航">
-          {links.map(([label, id]) => (
-            <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>
-              {label}
-            </a>
-          ))}
-        </nav>
+        <span className="nav-status">ARCHIVE INTERFACE / READY</span>
         <span className="nav-issue">ISSUE 07 · 1984—2010</span>
       </header>
     </>
