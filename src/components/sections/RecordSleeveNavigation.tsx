@@ -49,6 +49,8 @@ type RecordSleeveNavigationProps = {
 
 type RecordSleeveCardProps = {
   module: ArchiveModule;
+  fanRotation: number;
+  fanOffset: number;
   isActive: boolean;
   isNavigating: boolean;
   reduceMotion: boolean;
@@ -58,6 +60,8 @@ type RecordSleeveCardProps = {
 
 function RecordSleeveCard({
   module,
+  fanRotation,
+  fanOffset,
   isActive,
   isNavigating,
   reduceMotion,
@@ -72,7 +76,8 @@ function RecordSleeveCard({
       animate={{
         opacity: isNavigating && !isActive ? 0.24 : 1,
         scale: isLeaving && !reduceMotion ? 1.12 : 1,
-        y: isLeaving && !reduceMotion ? -28 : isActive && !reduceMotion ? -7 : 0,
+        rotate: reduceMotion ? fanRotation : isLeaving ? 0 : isActive ? fanRotation * 0.25 : fanRotation,
+        y: reduceMotion ? fanOffset : isLeaving ? -38 : isActive ? fanOffset - 18 : fanOffset,
       }}
       transition={{ duration: isLeaving ? 0.68 : 0.28, ease: [0.22, 1, 0.36, 1] }}
     >
@@ -138,10 +143,12 @@ export function RecordSleeveNavigation({
     >
       <span className="entry-menu-label">SELECT AN ARCHIVE RECORD / 选择档案唱片</span>
       <div className="record-sleeve-track">
-        {archiveModules.map((module) => (
+        {archiveModules.map((module, index) => (
           <RecordSleeveCard
             key={module.href}
             module={module}
+            fanRotation={[-10, 0, 10][index]}
+            fanOffset={[18, 0, 18][index]}
             isActive={selectedTrack === module.href}
             isNavigating={isNavigating}
             reduceMotion={Boolean(shouldReduceMotion)}
