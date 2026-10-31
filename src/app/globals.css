@@ -145,15 +145,25 @@ a { text-decoration: none; }
 .record-home::after { content: ""; position: absolute; inset: 0; z-index: 10; pointer-events: none; box-shadow: inset 0 0 120px rgba(0,0,0,.42); }
 .record-home-meta { position: absolute; z-index: 12; left: 23px; right: 23px; top: 13px; display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid rgba(217,203,183,.35); font: 9px "Courier New",monospace; letter-spacing: .13em; }
 .madonna-memory-wall { position: absolute; inset: 34px 0 0; z-index: 0; overflow: hidden; pointer-events: none; }
-.memory-frame { position: absolute; overflow: hidden; border: 1px solid rgba(217,203,183,.16); background: #332927; opacity: .13; filter: grayscale(1) sepia(.65) contrast(1.25); mix-blend-mode: screen; }
+.madonna-memory-wall::before { content: ""; position: absolute; z-index: 4; inset: -20% 0; background: linear-gradient(105deg, transparent 25%, rgba(217,203,183,.055) 43%, transparent 58%); transform: translateX(-65%); animation: projector-sweep 8s linear infinite; }
+.madonna-memory-wall::after { content: ""; position: absolute; z-index: 5; left: 0; right: 0; height: 16vh; top: -18vh; background: linear-gradient(transparent,rgba(217,203,183,.035),transparent); animation: scan-pass 5.8s linear infinite; }
+.memory-frame { position: absolute; overflow: hidden; border: 1px solid rgba(217,203,183,.16); background: #332927; opacity: .13; filter: grayscale(1) sepia(.65) contrast(1.25); mix-blend-mode: screen; will-change: transform,opacity,filter; }
 .memory-frame::after { content: "ARCHIVE / MEMORY TRACE"; position: absolute; left: 8px; bottom: 6px; color: rgba(217,203,183,.7); font: 7px "Courier New",monospace; letter-spacing: .12em; }
-.memory-frame img { width: 100%; height: 100%; object-fit: cover; transform: scale(2.32); filter: blur(.25px); }
-.memory-frame-one { width: 21vw; height: 43vh; left: -4vw; top: 7vh; transform: rotate(-5deg); }
-.memory-frame-one img { transform: scale(2.48) rotate(7deg); }
-.memory-frame-two { width: 17vw; height: 31vh; right: 1.5vw; top: 6vh; transform: rotate(3deg); opacity: .1; }
-.memory-frame-two img { transform: scale(2.6) scaleX(-1); }
-.memory-frame-three { width: 13vw; height: 23vh; left: 18vw; bottom: 9vh; transform: rotate(6deg); opacity: .08; }
-.memory-frame-three img { transform: scale(2.75) rotate(-10deg); }
+.memory-frame img { width: 100%; height: 100%; object-fit: cover; transform: scale(2.32); filter: blur(.25px); will-change: transform; }
+.memory-frame-one { width: 21vw; height: 43vh; left: -4vw; top: 7vh; transform: rotate(-5deg); animation: memory-cut-one 10.5s steps(1,end) infinite; }
+.memory-frame-one img { transform: scale(2.48) rotate(7deg); animation: memory-pan-one 12s ease-in-out infinite alternate; }
+.memory-frame-two { width: 17vw; height: 31vh; right: 1.5vw; top: 6vh; transform: rotate(3deg); opacity: .1; animation: memory-cut-two 8.7s 1.2s steps(1,end) infinite; }
+.memory-frame-two img { transform: scale(2.6) scaleX(-1); animation: memory-pan-two 10s ease-in-out infinite alternate; }
+.memory-frame-three { width: 13vw; height: 23vh; left: 18vw; bottom: 9vh; transform: rotate(6deg); opacity: .08; animation: memory-cut-three 7.4s 2s steps(1,end) infinite; }
+.memory-frame-three img { transform: scale(2.75) rotate(-10deg); animation: memory-pan-three 9s ease-in-out infinite alternate; }
+@keyframes memory-pan-one { from { transform: scale(2.48) rotate(7deg) translate(-2%,1%); } to { transform: scale(2.78) rotate(3deg) translate(5%,-3%); } }
+@keyframes memory-pan-two { from { transform: scale(2.6) scaleX(-1) translate(4%,2%); } to { transform: scale(2.92) scaleX(-1) translate(-4%,-4%); } }
+@keyframes memory-pan-three { from { transform: scale(2.75) rotate(-10deg) translate(0,4%); } to { transform: scale(3.08) rotate(-5deg) translate(5%,-2%); } }
+@keyframes memory-cut-one { 0%,18% { opacity: .05; transform: rotate(-5deg) translateX(-2%); } 19%,52% { opacity: .14; transform: rotate(-4deg) translateX(0); } 53%,67% { opacity: .08; filter: grayscale(1) sepia(.8) contrast(1.6); } 68%,100% { opacity: .12; transform: rotate(-6deg) translateY(1%); } }
+@keyframes memory-cut-two { 0%,27% { opacity: .11; } 28%,45% { opacity: .035; transform: rotate(3deg) translateX(3%); } 46%,78% { opacity: .13; transform: rotate(2deg) translateX(0); } 79%,100% { opacity: .07; } }
+@keyframes memory-cut-three { 0%,34% { opacity: .035; } 35%,69% { opacity: .1; transform: rotate(5deg) translateY(-2%); } 70%,100% { opacity: .055; transform: rotate(7deg); } }
+@keyframes projector-sweep { 0% { transform: translateX(-65%); } 48%,100% { transform: translateX(70%); } }
+@keyframes scan-pass { from { transform: translateY(0); } to { transform: translateY(125vh); } }
 .record-object { position: absolute; z-index: 2; inset: 7% 2% 19%; }
 .record-cover { position: absolute; z-index: 2; width: min(50vw,620px); aspect-ratio: 1; left: 3%; top: 50%; overflow: hidden; padding: 30px; color: #211c1b; background: #9d826e; box-shadow: 15px 19px 35px rgba(0,0,0,.34); transform: translate(-24vw,-43%) rotate(-14deg); animation: cover-settle 1.45s .15s cubic-bezier(.16,.84,.2,1) forwards; font: 10px "Courier New",monospace; }
 .record-cover::after { content: ""; position: absolute; width: 66%; aspect-ratio: 1; right: -20%; bottom: -18%; border: 40px solid rgba(39,30,27,.52); border-radius: 50%; }
