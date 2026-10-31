@@ -1,21 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useRef, useState, type MouseEvent } from "react";
-
-const modules = [
-  {
-    number: "01", href: "/media", eyebrow: "MEDIA ARCHAEOLOGY", title: "媒介考古",
-  },
-  {
-    number: "02", href: "/timeline", eyebrow: "MEMORY REVISITED", title: "时间回放",
-  },
-  {
-    number: "03", href: "/archive", eyebrow: "THE LIVING ARCHIVE", title: "动态档案",
-  },
-];
+import { archiveModules, RecordSleeveNavigation } from "./RecordSleeveNavigation";
 
 export function Hero() {
   const router = useRouter();
@@ -30,11 +18,11 @@ export function Hero() {
     if (navigationTimer.current) clearTimeout(navigationTimer.current);
     setSelectedTrack(href);
     setIsDropping(true);
-    navigationTimer.current = setTimeout(() => router.push(href), 520);
+    navigationTimer.current = setTimeout(() => router.push(href), 760);
   }
 
   const trackClass = selectedTrack
-    ? ` track-${modules.findIndex((module) => module.href === selectedTrack) + 1}`
+    ? ` track-${archiveModules.findIndex((module) => module.href === selectedTrack) + 1}`
     : "";
 
   return (
@@ -133,30 +121,12 @@ export function Hero() {
           <p className="record-home-summary">一座关于名人、衰老与粉丝怀旧的互动记忆档案。</p>
         </div>
 
-        <nav
-          className="record-entry-menu"
-          aria-label="选择互动模块"
-          onMouseLeave={() => !isDropping && setSelectedTrack(null)}
-        >
-            <span className="entry-menu-label">SELECT AN ARCHIVE TRACK / 选择档案轨道</span>
-            {modules.map((module) => (
-              <Link
-                className="record-entry"
-                href={module.href}
-                key={module.href}
-                onMouseEnter={() => !isDropping && setSelectedTrack(module.href)}
-                onFocus={() => !isDropping && setSelectedTrack(module.href)}
-                onBlur={() => !isDropping && setSelectedTrack(null)}
-                onClick={(event) => chooseTrack(event, module.href)}
-                aria-label={`${module.number} ${module.title} ${module.eyebrow}`}
-              >
-                <span>{module.number}</span>
-                <i aria-hidden="true" />
-                <strong>{module.title}</strong>
-                <small>{module.eyebrow}</small>
-              </Link>
-            ))}
-        </nav>
+        <RecordSleeveNavigation
+          selectedTrack={selectedTrack}
+          isNavigating={isDropping}
+          onPreview={setSelectedTrack}
+          onChoose={chooseTrack}
+        />
       </div>
     </section>
   );
