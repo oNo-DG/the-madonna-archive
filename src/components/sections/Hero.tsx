@@ -20,6 +20,18 @@ export function Hero() {
         <span>PLAYING / MEMORY</span>
       </div>
 
+      <div className="madonna-memory-wall" aria-hidden="true">
+        <div className="memory-frame memory-frame-one">
+          <Image src="/images/hero-vinyl.png" alt="" width={1200} height={1200} />
+        </div>
+        <div className="memory-frame memory-frame-two">
+          <Image src="/images/hero-vinyl.png" alt="" width={1200} height={1200} />
+        </div>
+        <div className="memory-frame memory-frame-three">
+          <Image src="/images/hero-vinyl.png" alt="" width={1200} height={1200} />
+        </div>
+      </div>
+
       <div className="record-object" aria-label="黑胶唱片与档案封套主视觉">
         <div className="record-cover" aria-hidden="true">
           <span>MEDIA<br />&amp; MEMORY</span>

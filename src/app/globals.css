@@ -144,6 +144,16 @@ a { text-decoration: none; }
 .record-home { position: relative; height: 100dvh; min-height: 680px; overflow: hidden; color: var(--card); background-color: #171413; background-image: radial-gradient(circle at 54% 43%, rgba(93,65,55,.2), transparent 34%), repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 4px); isolation: isolate; }
 .record-home::after { content: ""; position: absolute; inset: 0; z-index: 10; pointer-events: none; box-shadow: inset 0 0 120px rgba(0,0,0,.42); }
 .record-home-meta { position: absolute; z-index: 12; left: 23px; right: 23px; top: 13px; display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid rgba(217,203,183,.35); font: 9px "Courier New",monospace; letter-spacing: .13em; }
+.madonna-memory-wall { position: absolute; inset: 34px 0 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.memory-frame { position: absolute; overflow: hidden; border: 1px solid rgba(217,203,183,.16); background: #332927; opacity: .13; filter: grayscale(1) sepia(.65) contrast(1.25); mix-blend-mode: screen; }
+.memory-frame::after { content: "ARCHIVE / MEMORY TRACE"; position: absolute; left: 8px; bottom: 6px; color: rgba(217,203,183,.7); font: 7px "Courier New",monospace; letter-spacing: .12em; }
+.memory-frame img { width: 100%; height: 100%; object-fit: cover; transform: scale(2.32); filter: blur(.25px); }
+.memory-frame-one { width: 21vw; height: 43vh; left: -4vw; top: 7vh; transform: rotate(-5deg); }
+.memory-frame-one img { transform: scale(2.48) rotate(7deg); }
+.memory-frame-two { width: 17vw; height: 31vh; right: 1.5vw; top: 6vh; transform: rotate(3deg); opacity: .1; }
+.memory-frame-two img { transform: scale(2.6) scaleX(-1); }
+.memory-frame-three { width: 13vw; height: 23vh; left: 18vw; bottom: 9vh; transform: rotate(6deg); opacity: .08; }
+.memory-frame-three img { transform: scale(2.75) rotate(-10deg); }
 .record-object { position: absolute; z-index: 2; inset: 7% 2% 19%; }
 .record-cover { position: absolute; z-index: 2; width: min(50vw,620px); aspect-ratio: 1; left: 3%; top: 50%; overflow: hidden; padding: 30px; color: #211c1b; background: #9d826e; box-shadow: 15px 19px 35px rgba(0,0,0,.34); transform: translate(-24vw,-43%) rotate(-14deg); animation: cover-settle 1.45s .15s cubic-bezier(.16,.84,.2,1) forwards; font: 10px "Courier New",monospace; }
 .record-cover::after { content: ""; position: absolute; width: 66%; aspect-ratio: 1; right: -20%; bottom: -18%; border: 40px solid rgba(39,30,27,.52); border-radius: 50%; }
@@ -361,6 +371,9 @@ a { text-decoration: none; }
   .module-page { min-height: calc(100dvh - 92px); }
   .record-home { min-height: 620px; }
   .record-home-meta { left: 14px; right: 14px; top: 10px; }
+  .memory-frame-one { width: 36vw; height: 31vh; left: -15vw; }
+  .memory-frame-two { width: 28vw; height: 24vh; right: -9vw; }
+  .memory-frame-three { display: none; }
   .record-object { inset: 5% 0 25%; }
   .record-cover { width: min(82vw,480px); left: -22%; top: 47%; padding: 20px; }
   .record-disc { width: min(76vw,450px); right: -18%; top: 47%; }
