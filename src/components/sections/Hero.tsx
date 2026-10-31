@@ -34,7 +34,20 @@ export function Hero() {
 
       <div className="record-object" aria-label="黑胶唱片与档案封套主视觉">
         <div className="record-cover" aria-hidden="true">
-          <span>MEDIA<br />&amp; MEMORY</span>
+          <span className="cover-kicker">MEDIA<br />&amp; MEMORY</span>
+          <div className="cover-content">
+            <span className="cover-file">FILE 007 / RESEARCH ARCHIVE</span>
+            <p className="cover-question">
+              当明星、粉丝与时代一起变老，<br />我们究竟在怀念谁？
+            </p>
+            <dl className="cover-metadata">
+              <div><dt>SUBJECT</dt><dd>MADONNA</dd></div>
+              <div><dt>PERIOD</dt><dd>1984—2010</dd></div>
+              <div><dt>THEMES</dt><dd>CELEBRITY · AGEING<br />FAN NOSTALGIA</dd></div>
+            </dl>
+          </div>
+          <span className="cover-source">MEDIA AND MEMORY · CH. 07 · PP. 120—135</span>
+          <span className="cover-stamp">ARCHIVE<br />COPY</span>
           <i>07</i>
         </div>
         <Image
