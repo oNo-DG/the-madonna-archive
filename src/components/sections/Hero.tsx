@@ -95,6 +95,18 @@ export function Hero() {
             height={1200}
             priority
           />
+          <div className="digital-vinyl-overlay" aria-hidden="true">
+            <span className="vinyl-scan-sector" />
+            <span className="vinyl-data-ring" />
+            <span className="vinyl-decode-grid" />
+            <span className="vinyl-signal-band">001101 · IMAGE TRACE · 1984 · MEMORY BLOCK 07 · 101001 · FAN SIGNAL · AGEING · 001101 ·</span>
+            <span className="vinyl-timecode">00:07:84 / 33.3</span>
+            <span className="vinyl-readout">
+              <b>ANALOG → DATA</b>
+              <i>MEMORY SECTOR 07</i>
+              <em>READING / 68%</em>
+            </span>
+          </div>
           <div className="record-grooves" aria-hidden="true">
             <span className="groove groove-one" />
             <span className="groove groove-two" />
