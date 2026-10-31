@@ -139,6 +139,33 @@ a { text-decoration: none; }
 .game-status { position: absolute; left: 0; right: 0; bottom: 2.5%; display: flex; justify-content: space-between; padding-top: 8px; border-top: 1px solid rgba(62,43,40,.35); font: 9px "Courier New",monospace; letter-spacing: .12em; }
 .game-status span:nth-child(2) { color: var(--red); }
 
+/* Record homepage: the opening animation resolves into this same screen */
+.record-home { position: relative; height: 100dvh; min-height: 680px; overflow: hidden; color: var(--card); background-color: #171413; background-image: radial-gradient(circle at 54% 43%, rgba(93,65,55,.2), transparent 34%), repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 4px); isolation: isolate; }
+.record-home::after { content: ""; position: absolute; inset: 0; z-index: 10; pointer-events: none; box-shadow: inset 0 0 120px rgba(0,0,0,.42); }
+.record-home-meta { position: absolute; z-index: 12; left: 23px; right: 23px; top: 13px; display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid rgba(217,203,183,.35); font: 9px "Courier New",monospace; letter-spacing: .13em; }
+.record-object { position: absolute; z-index: 2; inset: 7% 2% 19%; }
+.record-cover { position: absolute; z-index: 2; width: min(50vw,620px); aspect-ratio: 1; left: 3%; top: 50%; overflow: hidden; padding: 30px; color: #211c1b; background: #9d826e; box-shadow: 15px 19px 35px rgba(0,0,0,.34); transform: translate(-24vw,-43%) rotate(-14deg); animation: cover-settle 1.45s .15s cubic-bezier(.16,.84,.2,1) forwards; font: 10px "Courier New",monospace; }
+.record-cover::after { content: ""; position: absolute; width: 66%; aspect-ratio: 1; right: -20%; bottom: -18%; border: 40px solid rgba(39,30,27,.52); border-radius: 50%; }
+.record-cover i { position: absolute; left: 34px; bottom: -46px; color: rgba(231,215,192,.6); font: italic 190px/.8 Georgia,serif; }
+.record-disc { position: absolute; z-index: 3; width: min(45vw,570px); height: auto; right: 6%; top: 50%; filter: drop-shadow(18px 24px 24px rgba(0,0,0,.48)); transform: translate(27vw,-43%) rotate(168deg); animation: disc-settle 1.7s .22s cubic-bezier(.16,.84,.2,1) forwards; }
+.record-needle { position: absolute; z-index: 4; width: min(23vw,290px); height: 2px; right: 4%; top: 36%; background: #9d7c5d; transform-origin: 100% 50%; transform: rotate(-67deg); opacity: 0; animation: needle-settle .75s 1.35s ease forwards; }
+.record-home-title { position: absolute; z-index: 6; left: 50%; bottom: 9.3%; width: min(92vw,1000px); transform: translateX(-50%); text-align: center; opacity: 0; animation: record-title-in .7s 1.55s ease forwards; }
+.record-home-title span, .record-home-title p { font: 9px "Courier New",monospace; letter-spacing: .18em; }
+.record-home-title h1 { margin: 5px 0 2px; color: #ded2c0; font: 400 clamp(39px,5.1vw,72px)/.95 Georgia,serif; letter-spacing: -.045em; }
+.record-home-title p { margin: 0; color: #c0b2a1; }
+.record-entry-menu { position: absolute; z-index: 13; left: 50%; bottom: 2.1%; display: flex; gap: 8px; transform: translateX(-50%); opacity: 0; animation: record-menu-in .55s 2.1s ease forwards; }
+.record-entry { width: clamp(150px,16vw,205px); min-height: 38px; padding: 7px 10px; display: grid; grid-template-columns: 22px auto; grid-template-rows: auto auto; column-gap: 8px; align-items: center; border: 1px solid rgba(217,203,183,.52); color: #d8cdbc; background: rgba(29,24,23,.75); backdrop-filter: blur(5px); transition: color .16s, background .16s, transform .16s; }
+.record-entry > span { grid-row: 1 / 3; font: 9px "Courier New",monospace; color: #b79273; }
+.record-entry strong { font: 400 14px/1 Georgia,serif; }
+.record-entry small { font: 7px "Courier New",monospace; letter-spacing: .05em; color: #9f9284; }
+.record-entry:hover, .record-entry:focus-visible { color: #171413; background: #d8cdbc; transform: translateY(-4px); outline: none; }
+.record-entry:hover small, .record-entry:focus-visible small { color: #5f504b; }
+@keyframes cover-settle { to { transform: translate(0,-43%) rotate(-5deg); } }
+@keyframes disc-settle { to { transform: translate(0,-43%) rotate(-7deg); } }
+@keyframes needle-settle { to { opacity: 1; transform: rotate(-39deg); } }
+@keyframes record-title-in { from { opacity: 0; transform: translate(-50%,12px); } to { opacity: 1; transform: translate(-50%,0); } }
+@keyframes record-menu-in { from { opacity: 0; transform: translate(-50%,8px); } to { opacity: 1; transform: translate(-50%,0); } }
+
 /* Media */
 .media-section { position: relative; margin-top: 110px; margin-bottom: 110px; padding-left: 54px; padding-right: 54px; background: var(--card); box-shadow: 0 24px 55px rgba(45,29,28,.2), 12px 14px 0 rgba(74,48,47,.18); transform: rotate(.18deg); }
 .media-section::after { content: ""; position: absolute; inset: 16px; pointer-events: none; border: 1px solid rgba(69,51,47,.25); }
@@ -284,6 +311,10 @@ a { text-decoration: none; }
 
 @media (max-width: 1000px) {
   .section-shell { width: min(calc(100% - 64px), var(--max)); }
+  .record-cover { left: -2%; width: 56vw; }
+  .record-disc { right: 1%; width: 51vw; }
+  .record-needle { right: 0; }
+  .record-home-title { bottom: 10.5%; }
   .hero-home-inner { width: calc(100% - 64px); }
   .game-vinyl { right: -8%; width: 58vw; }
   .game-menu { width: 39vw; }
@@ -308,6 +339,20 @@ a { text-decoration: none; }
   .nav-links { display: none; position: absolute; left: 0; right: 0; top: 58px; padding: 28px 20px; background: var(--black); border-bottom: 1px solid var(--gold); flex-direction: column; }
   .nav-links.is-open { display: flex; }
   .nav-issue { display: none; }
+  .record-home { min-height: 620px; }
+  .record-home-meta { left: 14px; right: 14px; top: 10px; }
+  .record-object { inset: 5% 0 25%; }
+  .record-cover { width: min(82vw,480px); left: -22%; top: 47%; padding: 20px; }
+  .record-disc { width: min(76vw,450px); right: -18%; top: 47%; }
+  .record-needle { width: 38vw; right: -8%; top: 33%; }
+  .record-home-title { bottom: 15%; }
+  .record-home-title h1 { font-size: clamp(31px,9.2vw,48px); }
+  .record-home-title span, .record-home-title p { font-size: 7px; }
+  .record-entry-menu { left: 12px; right: 12px; bottom: 3%; gap: 5px; transform: none; animation-name: record-menu-mobile-in; }
+  .record-entry { width: 33.333%; min-height: 44px; padding: 7px; grid-template-columns: 17px 1fr; column-gap: 4px; }
+  .record-entry strong { font-size: 12px; }
+  .record-entry small { display: none; }
+  @keyframes record-menu-mobile-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .opening-file-meta { inset: 20px 20px auto; }
   .opening-file-meta span:last-child { display: none; }
   .opening-skip { right: 20px; bottom: 18px; }
