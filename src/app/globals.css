@@ -168,16 +168,16 @@ a { text-decoration: none; }
 .record-cover { position: absolute; z-index: 2; width: min(50vw,620px); aspect-ratio: 1; left: 3%; top: 50%; overflow: hidden; padding: 30px; color: #211c1b; background: #9d826e; box-shadow: 15px 19px 35px rgba(0,0,0,.34); transform: translate(-24vw,-43%) rotate(-14deg); animation: cover-settle 1.45s .15s cubic-bezier(.16,.84,.2,1) forwards; font: 10px "Courier New",monospace; }
 .record-cover::after { content: ""; position: absolute; width: 66%; aspect-ratio: 1; right: -20%; bottom: -18%; border: 40px solid rgba(39,30,27,.52); border-radius: 50%; }
 .record-cover i { position: absolute; left: 34px; bottom: -46px; color: rgba(231,215,192,.6); font: italic 190px/.8 Georgia,serif; }
-.cover-kicker { position: relative; z-index: 3; display: block; letter-spacing: .06em; }
-.cover-content { position: absolute; z-index: 3; left: 8%; top: 23%; width: 57%; }
-.cover-file { display: block; padding-bottom: 8px; border-bottom: 1px solid rgba(33,28,27,.46); font-size: 8px; letter-spacing: .1em; }
-.cover-question { margin: 20px 0 24px; font: 400 clamp(17px,2vw,28px)/1.24 Georgia,"Songti SC",serif; letter-spacing: -.025em; }
-.cover-metadata { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; margin: 0; padding-top: 12px; border-top: 1px solid rgba(33,28,27,.32); }
+.cover-kicker { position: relative; z-index: 3; display: block; font-size: 12px; font-weight: 700; line-height: 1.25; letter-spacing: .06em; }
+.cover-content { position: absolute; z-index: 3; left: 8%; top: 21%; width: 60%; }
+.cover-file { display: block; padding-bottom: 10px; border-bottom: 1px solid rgba(33,28,27,.58); font-size: 11px; font-weight: 700; letter-spacing: .09em; }
+.cover-question { margin: 18px 0 21px; font: 400 clamp(23px,2.3vw,34px)/1.22 Georgia,"Songti SC",serif; letter-spacing: -.025em; }
+.cover-metadata { display: grid; grid-template-columns: 1fr 1fr; gap: 13px 20px; margin: 0; padding-top: 13px; border-top: 1px solid rgba(33,28,27,.42); }
 .cover-metadata div:last-child { grid-column: 1 / -1; }
-.cover-metadata dt { margin-bottom: 2px; font-size: 7px; letter-spacing: .13em; opacity: .62; }
-.cover-metadata dd { margin: 0; font-size: 8px; line-height: 1.45; letter-spacing: .06em; }
-.cover-source { position: absolute; z-index: 3; left: 8%; bottom: 9%; font-size: 7px; letter-spacing: .08em; }
-.cover-stamp { position: absolute; z-index: 3; right: 7%; top: 7%; padding: 6px 8px; border: 3px double rgba(90,49,49,.72); color: rgba(90,49,49,.78); font: 700 9px/1.05 "Courier New",monospace; text-align: center; transform: rotate(7deg); }
+.cover-metadata dt { margin-bottom: 3px; font-size: 9px; font-weight: 700; letter-spacing: .12em; opacity: .72; }
+.cover-metadata dd { margin: 0; font-size: 11px; font-weight: 700; line-height: 1.4; letter-spacing: .05em; }
+.cover-source { position: absolute; z-index: 3; left: 8%; bottom: 9%; font-size: 9px; font-weight: 700; letter-spacing: .07em; }
+.cover-stamp { position: absolute; z-index: 3; right: 7%; top: 7%; padding: 7px 9px; border: 3px double rgba(90,49,49,.78); color: rgba(90,49,49,.86); font: 700 11px/1.05 "Courier New",monospace; text-align: center; transform: rotate(7deg); }
 .record-disc { position: absolute; z-index: 3; width: min(45vw,570px); height: auto; right: 6%; top: 50%; filter: drop-shadow(18px 24px 24px rgba(0,0,0,.48)); transform: translate(27vw,-43%) rotate(168deg); animation: disc-settle 1.7s .22s cubic-bezier(.16,.84,.2,1) forwards; }
 .record-needle { position: absolute; z-index: 4; width: min(23vw,290px); height: 2px; right: 4%; top: 36%; background: #9d7c5d; transform-origin: 100% 50%; transform: rotate(-67deg); opacity: 0; animation: needle-settle .75s 1.35s ease forwards; }
 .record-home-title { position: absolute; z-index: 6; left: 50%; bottom: 9.3%; width: min(92vw,1000px); transform: translateX(-50%); text-align: center; opacity: 0; animation: record-title-in .7s 1.55s ease forwards; }

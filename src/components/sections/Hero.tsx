@@ -38,7 +38,7 @@ export function Hero() {
           <div className="cover-content">
             <span className="cover-file">FILE 007 / RESEARCH ARCHIVE</span>
             <p className="cover-question">
-              当明星、粉丝与时代一起变老，<br />我们究竟在怀念谁？
+              当明星、粉丝与时代<br />一起变老，<br />我们究竟在怀念谁？
             </p>
             <dl className="cover-metadata">
               <div><dt>SUBJECT</dt><dd>MADONNA</dd></div>
