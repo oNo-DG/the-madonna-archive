@@ -142,8 +142,8 @@ a { text-decoration: none; }
 
 /* Record homepage: the opening animation resolves into this same screen */
 .record-home { --arm-angle: -46deg; --groove-size: 86%; position: relative; height: 100dvh; min-height: 680px; overflow: hidden; color: #d7d7d4; background-color: #181818; background-image: linear-gradient(116deg, transparent 0 28%, rgba(255,255,255,.028) 37%, transparent 49%), repeating-radial-gradient(circle at 76% 39%, transparent 0 6px, rgba(255,255,255,.022) 7px, transparent 8px 12px), radial-gradient(circle at 67% 36%, #303030 0%, #1a1a1a 34%, transparent 58%), linear-gradient(108deg, #252525 0%, #121212 48%, #202020 100%); filter: grayscale(1) contrast(1.04); isolation: isolate; }
-.record-home::before { content: ""; position: absolute; z-index: 1; inset: 17px; pointer-events: none; border: 1px solid rgba(224,224,220,.17); box-shadow: inset 0 0 0 6px rgba(0,0,0,.14), inset 0 0 86px rgba(0,0,0,.42), 0 0 0 1px rgba(0,0,0,.5); background: radial-gradient(ellipse at 74% 38%, transparent 0 27%, rgba(255,255,255,.045) 27.2% 27.5%, transparent 27.8% 33%, rgba(255,255,255,.025) 33.2% 33.4%, transparent 33.6%), linear-gradient(112deg, transparent 0 27%, rgba(255,255,255,.035) 37%, transparent 48%); }
-.record-home::after { content: ""; position: absolute; inset: 0; z-index: 10; pointer-events: none; box-shadow: inset 0 0 155px 24px rgba(0,0,0,.7), inset 0 0 48px rgba(0,0,0,.78); background: radial-gradient(ellipse at 51% 43%, transparent 34%, rgba(0,0,0,.1) 58%, rgba(0,0,0,.58) 100%), linear-gradient(to bottom, transparent 45%, rgba(7,7,7,.22) 62%, rgba(5,5,5,.88) 94%), linear-gradient(112deg, transparent 23%, rgba(255,255,255,.018) 34%, transparent 45%); animation: sleeve-glare 11s ease-in-out infinite alternate; }
+.record-home::before { content: ""; position: absolute; z-index: 1; inset: 17px; pointer-events: none; border: 1px solid rgba(224,224,220,.17); box-shadow: inset 0 0 0 6px rgba(0,0,0,.14), inset 0 0 86px rgba(0,0,0,.42), 0 0 0 1px rgba(0,0,0,.5); background: radial-gradient(circle at 74% 38%, transparent 0 27%, rgba(255,255,255,.045) 27.2% 27.5%, transparent 27.8% 33%, rgba(255,255,255,.025) 33.2% 33.4%, transparent 33.6%), linear-gradient(112deg, transparent 0 27%, rgba(255,255,255,.035) 37%, transparent 48%); }
+.record-home::after { content: ""; position: absolute; inset: 0; z-index: 10; pointer-events: none; box-shadow: inset 0 0 155px 24px rgba(0,0,0,.7), inset 0 0 48px rgba(0,0,0,.78); background: radial-gradient(circle at 51% 43%, transparent 34%, rgba(0,0,0,.1) 58%, rgba(0,0,0,.58) 100%), linear-gradient(to bottom, transparent 45%, rgba(7,7,7,.22) 62%, rgba(5,5,5,.88) 94%), linear-gradient(112deg, transparent 23%, rgba(255,255,255,.018) 34%, transparent 45%); animation: sleeve-glare 11s ease-in-out infinite alternate; }
 .record-packaging { position: absolute; z-index: 2; inset: 35px 20px 18px; pointer-events: none; color: rgba(217,203,183,.42); font: 8px "Courier New",monospace; letter-spacing: .13em; }
 .packaging-spine { position: absolute; left: 1px; top: 9%; bottom: 9%; padding: 10px 5px; border-right: 1px solid rgba(217,203,183,.16); writing-mode: vertical-rl; transform: rotate(180deg); }
 .packaging-sticker { position: absolute; right: 2.3%; top: 7%; width: 58px; padding: 7px 5px; border: 1px solid rgba(217,203,183,.24); text-align: center; line-height: 1.45; transform: rotate(2deg); }
@@ -169,8 +169,8 @@ a { text-decoration: none; }
 @keyframes memory-cut-three { 0%,34% { opacity: .035; } 35%,69% { opacity: .1; transform: rotate(5deg) translateY(-2%); } 70%,100% { opacity: .055; transform: rotate(7deg); } }
 @keyframes projector-sweep { 0% { transform: translateX(-65%); } 48%,100% { transform: translateX(70%); } }
 @keyframes scan-pass { from { transform: translateY(0); } to { transform: translateY(125vh); } }
-.record-object { position: absolute; z-index: 2; inset: 7% 2% 19%; }
-.record-cover { position: absolute; z-index: 2; width: min(50vw,620px); aspect-ratio: 1; left: 3%; top: 50%; overflow: hidden; padding: 30px; color: #211c1b; background-color: #9d826e; background-image: radial-gradient(circle at 18% 12%, rgba(239,217,186,.16), transparent 26%), linear-gradient(92deg, rgba(66,45,38,.11), transparent 3%, transparent 96%, rgba(66,45,38,.16)), repeating-linear-gradient(3deg, transparent 0 8px, rgba(54,39,34,.018) 8px 9px), url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.63' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.18'/%3E%3C/svg%3E"); border: 1px solid rgba(52,37,32,.48); box-shadow: inset 0 0 28px rgba(67,45,39,.18), inset 9px 0 14px rgba(49,34,30,.09), 15px 19px 35px rgba(0,0,0,.34); transform: translate(-24vw,-43%) rotate(-14deg); animation: cover-settle 1.45s .15s cubic-bezier(.16,.84,.2,1) forwards; font: 10px "Courier New",monospace; }
+.record-object { position: absolute; z-index: 2; left: 50%; top: 4%; width: min(94vw,135vh,1180px); aspect-ratio: 1.62; transform: translateX(-50%); }
+.record-cover { position: absolute; z-index: 2; width: 52%; aspect-ratio: 1; left: 0; top: 50%; overflow: hidden; padding: 30px; color: #211c1b; background-color: #9d826e; background-image: radial-gradient(circle at 18% 12%, rgba(239,217,186,.16), transparent 26%), linear-gradient(92deg, rgba(66,45,38,.11), transparent 3%, transparent 96%, rgba(66,45,38,.16)), repeating-linear-gradient(3deg, transparent 0 8px, rgba(54,39,34,.018) 8px 9px), url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.63' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.18'/%3E%3C/svg%3E"); border: 1px solid rgba(52,37,32,.48); box-shadow: inset 0 0 28px rgba(67,45,39,.18), inset 9px 0 14px rgba(49,34,30,.09), 15px 19px 35px rgba(0,0,0,.34); transform: translate(-24vw,-43%) rotate(-14deg); animation: cover-settle 1.45s .15s cubic-bezier(.16,.84,.2,1) forwards; font: 10px "Courier New",monospace; }
 .record-cover::before { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(132deg, transparent 0 72%, rgba(48,33,29,.13) 72.2%, transparent 72.7%), linear-gradient(12deg, transparent 0 18%, rgba(236,210,177,.08) 18.2%, transparent 18.8%); box-shadow: inset 0 0 0 7px rgba(67,47,41,.055); mix-blend-mode: multiply; }
 .record-cover::after { content: ""; position: absolute; z-index: 1; width: 66%; aspect-ratio: 1; right: -20%; bottom: -18%; border: 40px solid rgba(39,30,27,.48); border-radius: 50%; box-shadow: 0 0 0 2px rgba(229,202,169,.08), inset 0 0 0 2px rgba(229,202,169,.08); }
 .record-cover i { position: absolute; z-index: 2; left: 34px; bottom: -46px; color: rgba(231,215,192,.6); font: italic 190px/.8 Georgia,serif; }
@@ -186,9 +186,9 @@ a { text-decoration: none; }
 .cover-stamp { position: absolute; z-index: 3; right: 7%; top: 7%; padding: 7px 9px; border: 3px double rgba(90,49,49,.78); color: rgba(90,49,49,.86); font: 700 11px/1.05 "Courier New",monospace; text-align: center; transform: rotate(7deg); }
 .cover-barcode { position: absolute; z-index: 3; right: 6%; bottom: 6%; width: 58px; height: 25px; opacity: .45; background: repeating-linear-gradient(90deg,#211c1b 0 1px,transparent 1px 3px,#211c1b 3px 5px,transparent 5px 7px); border-bottom: 4px solid transparent; }
 .cover-tape { position: absolute; z-index: 4; width: 90px; height: 24px; left: 42%; top: -5px; background: rgba(211,190,157,.28); border-left: 1px solid rgba(80,57,48,.15); border-right: 1px solid rgba(80,57,48,.15); transform: rotate(-2deg); box-shadow: 0 2px 5px rgba(60,42,36,.08); }
-.record-echo-disc { position: absolute; z-index: 1; width: min(57vw,740px); aspect-ratio: 1; right: -2%; top: 47%; border: 1px solid rgba(220,220,216,.18); border-radius: 50%; background: repeating-radial-gradient(circle, transparent 0 5px, rgba(255,255,255,.035) 6px, transparent 7px 11px), radial-gradient(circle, transparent 0 6%, rgba(190,190,186,.18) 6.2% 14%, transparent 14.2% 32%, rgba(220,220,216,.1) 32.2% 32.6%, transparent 32.8% 49%, rgba(125,125,122,.14) 49.2%); box-shadow: 0 0 0 28px rgba(255,255,255,.018), inset 0 0 65px rgba(255,255,255,.045); transform: translateY(-43%) rotate(-10deg); opacity: .64; }
+.record-echo-disc { position: absolute; z-index: 1; width: 57%; aspect-ratio: 1; right: -3%; top: 47%; border: 1px solid rgba(220,220,216,.18); border-radius: 50%; background: repeating-radial-gradient(circle, transparent 0 5px, rgba(255,255,255,.035) 6px, transparent 7px 11px), radial-gradient(circle, transparent 0 6%, rgba(190,190,186,.18) 6.2% 14%, transparent 14.2% 32%, rgba(220,220,216,.1) 32.2% 32.6%, transparent 32.8% 49%, rgba(125,125,122,.14) 49.2%); box-shadow: 0 0 0 28px rgba(255,255,255,.018), inset 0 0 65px rgba(255,255,255,.045); transform: translateY(-43%) rotate(-10deg); opacity: .64; }
 .record-echo-disc::after { content: "MEMORY / SIDE B"; position: absolute; left: 50%; top: 50%; color: rgba(215,187,153,.35); font: 8px "Courier New",monospace; letter-spacing: .16em; transform: translate(-50%,28px); }
-.record-disc-stage { position: absolute; z-index: 3; width: min(52vw,680px); aspect-ratio: 1; right: 2.5%; top: 47%; filter: drop-shadow(18px 24px 24px rgba(0,0,0,.48)); transform: translate(27vw,-43%) rotate(168deg); animation: disc-settle 1.7s .22s cubic-bezier(.16,.84,.2,1) forwards; }
+.record-disc-stage { position: absolute; z-index: 3; width: 52%; aspect-ratio: 1; right: 0; top: 47%; filter: drop-shadow(18px 24px 24px rgba(0,0,0,.48)); transform: translate(27vw,-43%) rotate(168deg); animation: disc-settle 1.7s .22s cubic-bezier(.16,.84,.2,1) forwards; }
 .record-disc { display: block; width: 100%; height: auto; animation: disc-play 18s 1.9s linear infinite; }
 .record-grooves { position: absolute; inset: 0; z-index: 4; border-radius: 50%; pointer-events: none; transform: rotate(7deg); }
 .groove { position: absolute; left: 50%; top: 50%; aspect-ratio: 1; border: 1px solid transparent; border-radius: 50%; transform: translate(-50%,-50%); transition: border-color .22s, box-shadow .22s, opacity .22s; opacity: 0; }
@@ -199,11 +199,11 @@ a { text-decoration: none; }
 .track-2 { --arm-angle: -33deg; --groove-size: 70%; }
 .track-3 { --arm-angle: -27deg; --groove-size: 54%; }
 .track-1 .groove-one, .track-2 .groove-two, .track-3 .groove-three { opacity: 1; border-color: rgba(206,162,115,.82); box-shadow: 0 0 0 2px rgba(72,42,35,.55), 0 0 18px rgba(206,162,115,.42), inset 0 0 18px rgba(206,162,115,.18); }
-.turntable-arm { position: absolute; z-index: 7; right: 1.4%; top: 8%; width: min(29vw,390px); height: min(39vw,520px); opacity: 0; animation: tonearm-arrive .9s 1.24s ease forwards; pointer-events: none; filter: drop-shadow(7px 10px 8px rgba(0,0,0,.5)); }
+.turntable-arm { position: absolute; z-index: 7; right: -1%; top: 4%; width: 33%; height: 72%; opacity: 0; animation: tonearm-arrive .9s 1.24s ease forwards; pointer-events: none; filter: drop-shadow(7px 10px 8px rgba(0,0,0,.5)); }
 .tonearm-base { position: absolute; right: 0; top: 0; width: clamp(68px,7.4vw,100px); aspect-ratio: 1; border: 1px solid rgba(225,204,175,.42); border-radius: 50%; background: radial-gradient(circle,#2a2321 0 21%,#927657 22% 25%,#312826 26% 49%,#80664d 50% 53%,#171312 54%); box-shadow: inset 0 0 18px rgba(0,0,0,.65), 0 9px 14px rgba(0,0,0,.4); }
 .tonearm-base i { position: absolute; inset: 13%; border-radius: 50%; border: 1px dashed rgba(217,203,183,.28); }
 .tonearm-pivot { position: absolute; z-index: 4; right: clamp(24px,2.7vw,36px); top: clamp(24px,2.7vw,36px); width: 24px; aspect-ratio: 1; border: 3px solid #a88b67; border-radius: 50%; background: #211a18; box-shadow: inset 0 0 0 3px #5d4a3a; }
-.tonearm-assembly { position: absolute; z-index: 3; right: clamp(35px,3.7vw,48px); top: clamp(35px,3.7vw,48px); width: min(27vw,355px); height: 32px; transform-origin: calc(100% - 2px) 50%; transform: rotate(var(--arm-angle)); transition: transform .48s cubic-bezier(.2,.8,.2,1), translate .18s ease; }
+.tonearm-assembly { position: absolute; z-index: 3; right: clamp(35px,3.7vw,48px); top: clamp(35px,3.7vw,48px); width: 92%; height: 32px; transform-origin: calc(100% - 2px) 50%; transform: rotate(var(--arm-angle)); transition: transform .48s cubic-bezier(.2,.8,.2,1), translate .18s ease; }
 .tonearm-weight { position: absolute; right: -35px; top: 6px; width: 58px; height: 20px; border-radius: 9px; background: linear-gradient(#937b5e,#3f342e 42%,#1d1816 58%,#715b47); border: 1px solid #a38765; }
 .tonearm-bar { position: absolute; left: 22px; right: 8px; top: 14px; height: 5px; border-radius: 4px; background: linear-gradient(#d0b589,#735f49 48%,#3e332c 52%,#b0916a); box-shadow: 0 1px 0 rgba(255,255,255,.22); }
 .tonearm-head { position: absolute; left: 0; top: 5px; width: 34px; height: 23px; border: 1px solid #8f7659; border-radius: 2px 8px 3px 2px; background: linear-gradient(100deg,#2a2421,#5c4c3f); transform: rotate(-4deg); }
@@ -212,10 +212,10 @@ a { text-decoration: none; }
 .record-home.is-dropping .tonearm-head b { height: 13px; background: #e3c899; }
 .record-home.is-dropping .record-disc { animation-duration: 3.8s; }
 .record-interface { position: absolute; z-index: 13; left: 50%; top: 65%; width: min(96vw,1180px); display: grid; justify-items: center; gap: 22px; transform: translate(-50%,-50%); }
-.record-interface::before { content: ""; position: absolute; z-index: -1; inset: -44px -7vw -34px; pointer-events: none; background: radial-gradient(ellipse at center, rgba(0,0,0,.82) 0%, rgba(0,0,0,.56) 42%, transparent 76%); }
+.record-interface::before { content: ""; position: absolute; z-index: -1; width: min(118vw,1320px); aspect-ratio: 1; left: 50%; top: 50%; pointer-events: none; background: radial-gradient(circle at center, rgba(0,0,0,.8) 0%, rgba(0,0,0,.52) 38%, transparent 70%); transform: translate(-50%,-50%); }
 .record-home-title { width: 100%; text-align: center; opacity: 0; animation: record-title-in .7s 1.55s ease forwards; }
 .record-home-title span, .record-home-title p { font: 9px "Courier New",monospace; letter-spacing: .18em; }
-.record-home-title h1 { margin: 5px 0 2px; color: #e7e7e3; font: 400 clamp(52px,6.25vw,94px)/.92 Georgia,serif; letter-spacing: -.05em; text-shadow: 0 3px 20px rgba(0,0,0,.92); }
+.record-home-title h1 { margin: 5px 0 2px; color: #e7e7e3; font: 400 clamp(48px,5.45vw,86px)/.92 Georgia,serif; letter-spacing: -.05em; white-space: nowrap; text-shadow: 0 3px 20px rgba(0,0,0,.92); }
 .record-home-title p { margin: 0; color: #c0b2a1; }
 .record-home-title .record-home-summary { margin-top: 7px; font-family: Arial,"Noto Sans SC",sans-serif; font-size: 11px; letter-spacing: .08em; color: #b8b8b4; text-shadow: 0 2px 8px #000; }
 .record-entry-menu { width: min(90vw,900px); display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; opacity: 0; animation: record-menu-in .55s 2.1s ease forwards; }
@@ -394,9 +394,10 @@ a { text-decoration: none; }
 
 @media (max-width: 1000px) {
   .section-shell { width: min(calc(100% - 64px), var(--max)); }
-  .record-cover { left: -2%; width: 56vw; }
-  .record-echo-disc { right: -8%; width: 63vw; }
-  .record-disc-stage { right: -1%; width: 57vw; }
+  .record-object { width: min(96vw,128vh); }
+  .record-cover { left: 0; width: 54%; }
+  .record-echo-disc { right: -6%; width: 61%; }
+  .record-disc-stage { right: -2%; width: 56%; }
   .turntable-arm { right: -2%; }
   .record-interface { top: 67%; gap: 18px; }
   .hero-home-inner { width: calc(100% - 64px); }
@@ -433,7 +434,7 @@ a { text-decoration: none; }
   .memory-frame-one { width: 36vw; height: 31vh; left: -15vw; }
   .memory-frame-two { width: 28vw; height: 24vh; right: -9vw; }
   .memory-frame-three { display: none; }
-  .record-object { inset: 5% 0 25%; }
+  .record-object { inset: auto 0 25%; width: auto; aspect-ratio: auto; left: 0; top: 5%; transform: none; }
   .record-cover { width: min(82vw,480px); left: -22%; top: 47%; padding: 20px; }
   .record-echo-disc { width: min(88vw,520px); right: -28%; top: 45%; }
   .record-disc-stage { width: min(76vw,450px); right: -18%; top: 47%; }
