@@ -85,6 +85,7 @@ export function Hero() {
           <span className="cover-tape" />
           <i>07</i>
         </div>
+        <span className="record-echo-disc" aria-hidden="true" />
         <div className="record-disc-stage">
           <Image
             className="record-disc"
@@ -112,36 +113,38 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="record-home-title">
-        <span>NOW PLAYING</span>
-        <h1>THE MADONNA ARCHIVE</h1>
-        <p>CELEBRITY · AGEING · FAN NOSTALGIA</p>
-        <p className="record-home-summary">一座关于名人、衰老与粉丝怀旧的互动记忆档案。</p>
-      </div>
+      <div className="record-interface">
+        <div className="record-home-title">
+          <span>NOW PLAYING</span>
+          <h1>THE MADONNA ARCHIVE</h1>
+          <p>CELEBRITY · AGEING · FAN NOSTALGIA</p>
+          <p className="record-home-summary">一座关于名人、衰老与粉丝怀旧的互动记忆档案。</p>
+        </div>
 
-      <nav
-        className="record-entry-menu"
-        aria-label="选择互动模块"
-        onMouseLeave={() => !isDropping && setSelectedTrack(null)}
-      >
-          {modules.map((module) => (
-            <Link
-              className="record-entry"
-              href={module.href}
-              key={module.href}
-              onMouseEnter={() => !isDropping && setSelectedTrack(module.href)}
-              onFocus={() => !isDropping && setSelectedTrack(module.href)}
-              onBlur={() => !isDropping && setSelectedTrack(null)}
-              onClick={(event) => chooseTrack(event, module.href)}
-              aria-label={`${module.number} ${module.title} ${module.eyebrow}`}
-            >
-              <span>{module.number}</span>
-              <i aria-hidden="true" />
-              <strong>{module.title}</strong>
-              <small>{module.eyebrow}</small>
-            </Link>
-          ))}
-      </nav>
+        <nav
+          className="record-entry-menu"
+          aria-label="选择互动模块"
+          onMouseLeave={() => !isDropping && setSelectedTrack(null)}
+        >
+            {modules.map((module) => (
+              <Link
+                className="record-entry"
+                href={module.href}
+                key={module.href}
+                onMouseEnter={() => !isDropping && setSelectedTrack(module.href)}
+                onFocus={() => !isDropping && setSelectedTrack(module.href)}
+                onBlur={() => !isDropping && setSelectedTrack(null)}
+                onClick={(event) => chooseTrack(event, module.href)}
+                aria-label={`${module.number} ${module.title} ${module.eyebrow}`}
+              >
+                <span>{module.number}</span>
+                <i aria-hidden="true" />
+                <strong>{module.title}</strong>
+                <small>{module.eyebrow}</small>
+              </Link>
+            ))}
+        </nav>
+      </div>
     </section>
   );
 }
