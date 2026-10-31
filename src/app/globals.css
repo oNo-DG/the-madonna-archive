@@ -211,10 +211,11 @@ a { text-decoration: none; }
 .record-home.is-dropping .tonearm-assembly { translate: 0 4px; }
 .record-home.is-dropping .tonearm-head b { height: 13px; background: #e3c899; }
 .record-home.is-dropping .record-disc { animation-duration: 3.8s; }
-.record-interface { position: absolute; z-index: 13; left: 50%; bottom: 4.4%; width: min(96vw,1080px); display: grid; justify-items: center; gap: 22px; transform: translateX(-50%); }
+.record-interface { position: absolute; z-index: 13; left: 50%; top: 65%; width: min(96vw,1180px); display: grid; justify-items: center; gap: 22px; transform: translate(-50%,-50%); }
+.record-interface::before { content: ""; position: absolute; z-index: -1; inset: -44px -7vw -34px; pointer-events: none; background: radial-gradient(ellipse at center, rgba(0,0,0,.82) 0%, rgba(0,0,0,.56) 42%, transparent 76%); }
 .record-home-title { width: 100%; text-align: center; opacity: 0; animation: record-title-in .7s 1.55s ease forwards; }
 .record-home-title span, .record-home-title p { font: 9px "Courier New",monospace; letter-spacing: .18em; }
-.record-home-title h1 { margin: 5px 0 2px; color: #e7e7e3; font: 400 clamp(39px,5.1vw,72px)/.95 Georgia,serif; letter-spacing: -.045em; text-shadow: 0 3px 18px rgba(0,0,0,.86); }
+.record-home-title h1 { margin: 5px 0 2px; color: #e7e7e3; font: 400 clamp(52px,6.25vw,94px)/.92 Georgia,serif; letter-spacing: -.05em; text-shadow: 0 3px 20px rgba(0,0,0,.92); }
 .record-home-title p { margin: 0; color: #c0b2a1; }
 .record-home-title .record-home-summary { margin-top: 7px; font-family: Arial,"Noto Sans SC",sans-serif; font-size: 11px; letter-spacing: .08em; color: #b8b8b4; text-shadow: 0 2px 8px #000; }
 .record-entry-menu { width: min(90vw,900px); display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; opacity: 0; animation: record-menu-in .55s 2.1s ease forwards; }
@@ -397,7 +398,7 @@ a { text-decoration: none; }
   .record-echo-disc { right: -8%; width: 63vw; }
   .record-disc-stage { right: -1%; width: 57vw; }
   .turntable-arm { right: -2%; }
-  .record-interface { bottom: 5.5%; gap: 18px; }
+  .record-interface { top: 67%; gap: 18px; }
   .hero-home-inner { width: calc(100% - 64px); }
   .game-vinyl { right: -8%; width: 58vw; }
   .game-menu { width: 39vw; }
@@ -441,7 +442,7 @@ a { text-decoration: none; }
   .packaging-spine { display: none; }
   .packaging-sticker { right: 1%; top: 5%; transform: scale(.82) rotate(2deg); }
   .packaging-note { display: none; }
-  .record-interface { bottom: 5.2%; width: calc(100% - 24px); gap: 13px; }
+  .record-interface { top: auto; bottom: 5.2%; width: calc(100% - 24px); gap: 13px; transform: translateX(-50%); }
   .record-home-title h1 { font-size: clamp(31px,9.2vw,48px); }
   .record-home-title span, .record-home-title p { font-size: 7px; }
   .record-entry-menu { width: 100%; gap: 5px; animation-name: record-menu-mobile-in; }
