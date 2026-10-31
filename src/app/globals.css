@@ -141,9 +141,9 @@ a { text-decoration: none; }
 .game-status span:nth-child(2) { color: var(--red); }
 
 /* Record homepage: the opening animation resolves into this same screen */
-.record-home { --arm-angle: -46deg; --groove-size: 86%; position: relative; height: 100dvh; min-height: 680px; overflow: hidden; color: var(--card); background-color: #211b19; background-image: radial-gradient(circle at 68% 38%, rgba(134,96,73,.15), transparent 34%), linear-gradient(108deg, #2b2421 0%, #1d1918 48%, #28211e 100%); isolation: isolate; }
-.record-home::before { content: ""; position: absolute; z-index: 1; inset: 17px; pointer-events: none; border: 1px solid rgba(204,179,147,.18); box-shadow: inset 0 0 0 6px rgba(11,8,8,.12), inset 0 0 86px rgba(0,0,0,.42), 0 0 0 1px rgba(0,0,0,.4); background: linear-gradient(112deg, transparent 0 27%, rgba(235,217,189,.045) 37%, transparent 48%), radial-gradient(circle at 88% 82%, transparent 0 16%, rgba(192,158,121,.05) 16.2% 16.5%, transparent 16.8%); }
-.record-home::after { content: ""; position: absolute; inset: 0; z-index: 10; pointer-events: none; box-shadow: inset 0 0 130px rgba(0,0,0,.44); background: linear-gradient(112deg, transparent 23%, rgba(231,213,183,.02) 34%, transparent 45%); animation: sleeve-glare 11s ease-in-out infinite alternate; }
+.record-home { --arm-angle: -46deg; --groove-size: 86%; position: relative; height: 100dvh; min-height: 680px; overflow: hidden; color: #d7d7d4; background-color: #181818; background-image: linear-gradient(116deg, transparent 0 28%, rgba(255,255,255,.028) 37%, transparent 49%), repeating-radial-gradient(circle at 76% 39%, transparent 0 6px, rgba(255,255,255,.022) 7px, transparent 8px 12px), radial-gradient(circle at 67% 36%, #303030 0%, #1a1a1a 34%, transparent 58%), linear-gradient(108deg, #252525 0%, #121212 48%, #202020 100%); filter: grayscale(1) contrast(1.04); isolation: isolate; }
+.record-home::before { content: ""; position: absolute; z-index: 1; inset: 17px; pointer-events: none; border: 1px solid rgba(224,224,220,.17); box-shadow: inset 0 0 0 6px rgba(0,0,0,.14), inset 0 0 86px rgba(0,0,0,.42), 0 0 0 1px rgba(0,0,0,.5); background: radial-gradient(ellipse at 74% 38%, transparent 0 27%, rgba(255,255,255,.045) 27.2% 27.5%, transparent 27.8% 33%, rgba(255,255,255,.025) 33.2% 33.4%, transparent 33.6%), linear-gradient(112deg, transparent 0 27%, rgba(255,255,255,.035) 37%, transparent 48%); }
+.record-home::after { content: ""; position: absolute; inset: 0; z-index: 10; pointer-events: none; box-shadow: inset 0 0 130px rgba(0,0,0,.44); background: linear-gradient(to bottom, transparent 47%, rgba(7,7,7,.18) 61%, rgba(5,5,5,.82) 92%), linear-gradient(112deg, transparent 23%, rgba(255,255,255,.02) 34%, transparent 45%); animation: sleeve-glare 11s ease-in-out infinite alternate; }
 .record-packaging { position: absolute; z-index: 2; inset: 35px 20px 18px; pointer-events: none; color: rgba(217,203,183,.42); font: 8px "Courier New",monospace; letter-spacing: .13em; }
 .packaging-spine { position: absolute; left: 1px; top: 9%; bottom: 9%; padding: 10px 5px; border-right: 1px solid rgba(217,203,183,.16); writing-mode: vertical-rl; transform: rotate(180deg); }
 .packaging-sticker { position: absolute; right: 2.3%; top: 7%; width: 58px; padding: 7px 5px; border: 1px solid rgba(217,203,183,.24); text-align: center; line-height: 1.45; transform: rotate(2deg); }
@@ -186,7 +186,7 @@ a { text-decoration: none; }
 .cover-stamp { position: absolute; z-index: 3; right: 7%; top: 7%; padding: 7px 9px; border: 3px double rgba(90,49,49,.78); color: rgba(90,49,49,.86); font: 700 11px/1.05 "Courier New",monospace; text-align: center; transform: rotate(7deg); }
 .cover-barcode { position: absolute; z-index: 3; right: 6%; bottom: 6%; width: 58px; height: 25px; opacity: .45; background: repeating-linear-gradient(90deg,#211c1b 0 1px,transparent 1px 3px,#211c1b 3px 5px,transparent 5px 7px); border-bottom: 4px solid transparent; }
 .cover-tape { position: absolute; z-index: 4; width: 90px; height: 24px; left: 42%; top: -5px; background: rgba(211,190,157,.28); border-left: 1px solid rgba(80,57,48,.15); border-right: 1px solid rgba(80,57,48,.15); transform: rotate(-2deg); box-shadow: 0 2px 5px rgba(60,42,36,.08); }
-.record-echo-disc { position: absolute; z-index: 1; width: min(57vw,740px); aspect-ratio: 1; right: -2%; top: 47%; border: 1px solid rgba(188,153,119,.2); border-radius: 50%; background: radial-gradient(circle, transparent 0 6%, rgba(159,112,91,.22) 6.2% 14%, transparent 14.2% 32%, rgba(188,153,119,.11) 32.2% 32.6%, transparent 32.8% 44%, rgba(188,153,119,.09) 44.2% 44.5%, transparent 44.7% 49%, rgba(111,75,62,.16) 49.2%); box-shadow: 0 0 0 28px rgba(121,82,67,.035), inset 0 0 65px rgba(157,113,89,.07); transform: translateY(-43%) rotate(-10deg); opacity: .58; }
+.record-echo-disc { position: absolute; z-index: 1; width: min(57vw,740px); aspect-ratio: 1; right: -2%; top: 47%; border: 1px solid rgba(220,220,216,.18); border-radius: 50%; background: repeating-radial-gradient(circle, transparent 0 5px, rgba(255,255,255,.035) 6px, transparent 7px 11px), radial-gradient(circle, transparent 0 6%, rgba(190,190,186,.18) 6.2% 14%, transparent 14.2% 32%, rgba(220,220,216,.1) 32.2% 32.6%, transparent 32.8% 49%, rgba(125,125,122,.14) 49.2%); box-shadow: 0 0 0 28px rgba(255,255,255,.018), inset 0 0 65px rgba(255,255,255,.045); transform: translateY(-43%) rotate(-10deg); opacity: .64; }
 .record-echo-disc::after { content: "MEMORY / SIDE B"; position: absolute; left: 50%; top: 50%; color: rgba(215,187,153,.35); font: 8px "Courier New",monospace; letter-spacing: .16em; transform: translate(-50%,28px); }
 .record-disc-stage { position: absolute; z-index: 3; width: min(52vw,680px); aspect-ratio: 1; right: 2.5%; top: 47%; filter: drop-shadow(18px 24px 24px rgba(0,0,0,.48)); transform: translate(27vw,-43%) rotate(168deg); animation: disc-settle 1.7s .22s cubic-bezier(.16,.84,.2,1) forwards; }
 .record-disc { display: block; width: 100%; height: auto; animation: disc-play 18s 1.9s linear infinite; }
@@ -211,20 +211,21 @@ a { text-decoration: none; }
 .record-home.is-dropping .tonearm-assembly { translate: 0 4px; }
 .record-home.is-dropping .tonearm-head b { height: 13px; background: #e3c899; }
 .record-home.is-dropping .record-disc { animation-duration: 3.8s; }
-.record-interface { position: absolute; z-index: 13; left: 50%; bottom: 5.8%; width: min(94vw,1000px); display: grid; justify-items: center; gap: 22px; transform: translateX(-50%); }
+.record-interface { position: absolute; z-index: 13; left: 50%; bottom: 4.4%; width: min(96vw,1080px); display: grid; justify-items: center; gap: 22px; transform: translateX(-50%); }
 .record-home-title { width: 100%; text-align: center; opacity: 0; animation: record-title-in .7s 1.55s ease forwards; }
 .record-home-title span, .record-home-title p { font: 9px "Courier New",monospace; letter-spacing: .18em; }
-.record-home-title h1 { margin: 5px 0 2px; color: #ded2c0; font: 400 clamp(39px,5.1vw,72px)/.95 Georgia,serif; letter-spacing: -.045em; }
+.record-home-title h1 { margin: 5px 0 2px; color: #e7e7e3; font: 400 clamp(39px,5.1vw,72px)/.95 Georgia,serif; letter-spacing: -.045em; text-shadow: 0 3px 18px rgba(0,0,0,.86); }
 .record-home-title p { margin: 0; color: #c0b2a1; }
-.record-home-title .record-home-summary { margin-top: 7px; font-family: Arial,"Noto Sans SC",sans-serif; font-size: 11px; letter-spacing: .08em; color: #9f9284; }
-.record-entry-menu { display: flex; gap: 8px; opacity: 0; animation: record-menu-in .55s 2.1s ease forwards; }
-.record-entry { position: relative; width: clamp(150px,16vw,205px); min-height: 38px; padding: 7px 10px; display: grid; grid-template-columns: 22px 7px auto; grid-template-rows: auto auto; column-gap: 7px; align-items: center; border: 1px solid rgba(217,203,183,.52); color: #d8cdbc; background: rgba(29,24,23,.75); backdrop-filter: blur(5px); transition: color .16s, background .16s, transform .16s; }
-.record-entry > span { grid-row: 1 / 3; font: 9px "Courier New",monospace; color: #b79273; }
-.record-entry > i { grid-row: 1 / 3; width: 5px; aspect-ratio: 1; border: 1px solid #a78567; border-radius: 50%; box-shadow: 0 0 0 3px rgba(167,133,103,.1); }
-.record-entry strong { font: 400 14px/1 Georgia,serif; }
-.record-entry small { font: 7px "Courier New",monospace; letter-spacing: .05em; color: #9f9284; }
+.record-home-title .record-home-summary { margin-top: 7px; font-family: Arial,"Noto Sans SC",sans-serif; font-size: 11px; letter-spacing: .08em; color: #b8b8b4; text-shadow: 0 2px 8px #000; }
+.record-entry-menu { width: min(90vw,900px); display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; opacity: 0; animation: record-menu-in .55s 2.1s ease forwards; }
+.entry-menu-label { grid-column: 1 / -1; padding-bottom: 7px; border-bottom: 1px solid rgba(220,220,216,.34); color: #b8b8b5; font: 9px "Courier New",monospace; letter-spacing: .16em; text-align: center; }
+.record-entry { position: relative; min-height: 64px; padding: 12px 16px; display: grid; grid-template-columns: 28px 8px auto; grid-template-rows: auto auto; column-gap: 10px; align-items: center; border: 1px solid rgba(222,222,218,.52); color: #e2e2df; background: rgba(18,18,18,.82); backdrop-filter: blur(5px); transition: color .16s, background .16s, transform .16s, border-color .16s; }
+.record-entry > span { grid-row: 1 / 3; font: 11px "Courier New",monospace; color: #aaa; }
+.record-entry > i { grid-row: 1 / 3; width: 7px; aspect-ratio: 1; border: 1px solid #aaa; border-radius: 50%; box-shadow: 0 0 0 4px rgba(190,190,186,.08); }
+.record-entry strong { font: 400 19px/1 Georgia,serif; }
+.record-entry small { font: 8px "Courier New",monospace; letter-spacing: .07em; color: #999; }
 .record-entry:hover, .record-entry:focus-visible { color: #171413; background: #d8cdbc; transform: translateY(-4px); outline: none; }
-.record-entry:hover > i, .record-entry:focus-visible > i { background: #7f453f; border-color: #7f453f; box-shadow: 0 0 9px rgba(127,69,63,.8); }
+.record-entry:hover > i, .record-entry:focus-visible > i { background: #333; border-color: #333; box-shadow: 0 0 9px rgba(0,0,0,.55); }
 .record-entry:hover small, .record-entry:focus-visible small { color: #5f504b; }
 @keyframes cover-settle { to { transform: translate(0,-43%) rotate(-5deg); } }
 @keyframes disc-settle { to { transform: translate(0,-43%) rotate(-7deg); } }
@@ -444,7 +445,8 @@ a { text-decoration: none; }
   .record-home-title h1 { font-size: clamp(31px,9.2vw,48px); }
   .record-home-title span, .record-home-title p { font-size: 7px; }
   .record-entry-menu { width: 100%; gap: 5px; animation-name: record-menu-mobile-in; }
-  .record-entry { width: 33.333%; min-height: 44px; padding: 7px; grid-template-columns: 17px 6px 1fr; column-gap: 4px; }
+  .entry-menu-label { padding-bottom: 5px; font-size: 7px; }
+  .record-entry { width: 33.333%; min-height: 54px; padding: 8px 6px; grid-template-columns: 17px 6px 1fr; column-gap: 4px; }
   .record-entry strong { font-size: 12px; }
   .record-entry small { display: none; }
   @keyframes record-menu-mobile-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }

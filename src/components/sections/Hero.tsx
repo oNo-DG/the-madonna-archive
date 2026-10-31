@@ -126,6 +126,7 @@ export function Hero() {
           aria-label="选择互动模块"
           onMouseLeave={() => !isDropping && setSelectedTrack(null)}
         >
+            <span className="entry-menu-label">SELECT AN ARCHIVE TRACK / 选择档案轨道</span>
             {modules.map((module) => (
               <Link
                 className="record-entry"
