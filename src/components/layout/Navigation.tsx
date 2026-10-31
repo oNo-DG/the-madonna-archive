@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 const links = [
   ["MEDIA", "media"],
-  ["CHAPTER", "chapter"],
   ["TIMELINE", "timeline"],
   ["ARCHIVE", "archive"],
   ["SOURCES", "references"],
