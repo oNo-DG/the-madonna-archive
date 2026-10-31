@@ -141,8 +141,13 @@ a { text-decoration: none; }
 .game-status span:nth-child(2) { color: var(--red); }
 
 /* Record homepage: the opening animation resolves into this same screen */
-.record-home { position: relative; height: 100dvh; min-height: 680px; overflow: hidden; color: var(--card); background-color: #171413; background-image: radial-gradient(circle at 54% 43%, rgba(93,65,55,.2), transparent 34%), repeating-linear-gradient(0deg, rgba(255,255,255,.014) 0 1px, transparent 1px 4px); isolation: isolate; }
-.record-home::after { content: ""; position: absolute; inset: 0; z-index: 10; pointer-events: none; box-shadow: inset 0 0 120px rgba(0,0,0,.42); }
+.record-home { --arm-angle: -46deg; --groove-size: 86%; position: relative; height: 100dvh; min-height: 680px; overflow: hidden; color: var(--card); background-color: #211b19; background-image: radial-gradient(circle at 68% 43%, transparent 0 27%, rgba(147,112,82,.1) 27.15%, transparent 27.75%), linear-gradient(102deg, rgba(221,197,166,.05), transparent 18% 70%, rgba(36,25,22,.24)), repeating-linear-gradient(0deg, rgba(255,255,255,.018) 0 1px, transparent 1px 4px), url("data:image/svg+xml,%3Csvg viewBox='0 0 190 190' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.38' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='.13'/%3E%3C/svg%3E"); isolation: isolate; }
+.record-home::before { content: ""; position: absolute; z-index: 1; inset: 17px; pointer-events: none; border: 1px solid rgba(204,179,147,.18); box-shadow: inset 0 0 0 6px rgba(11,8,8,.12), inset 0 0 86px rgba(0,0,0,.42), 0 0 0 1px rgba(0,0,0,.4); background: linear-gradient(112deg, transparent 0 27%, rgba(235,217,189,.045) 37%, transparent 48%), radial-gradient(circle at 88% 82%, transparent 0 16%, rgba(192,158,121,.05) 16.2% 16.5%, transparent 16.8%); }
+.record-home::after { content: ""; position: absolute; inset: 0; z-index: 10; pointer-events: none; box-shadow: inset 0 0 150px rgba(0,0,0,.54); background: linear-gradient(112deg, transparent 23%, rgba(231,213,183,.025) 34%, transparent 45%); animation: sleeve-glare 11s ease-in-out infinite alternate; }
+.record-packaging { position: absolute; z-index: 2; inset: 35px 20px 18px; pointer-events: none; color: rgba(217,203,183,.42); font: 8px "Courier New",monospace; letter-spacing: .13em; }
+.packaging-spine { position: absolute; left: 1px; top: 9%; bottom: 9%; padding: 10px 5px; border-right: 1px solid rgba(217,203,183,.16); writing-mode: vertical-rl; transform: rotate(180deg); }
+.packaging-sticker { position: absolute; right: 2.3%; top: 7%; width: 58px; padding: 7px 5px; border: 1px solid rgba(217,203,183,.24); text-align: center; line-height: 1.45; transform: rotate(2deg); }
+.packaging-note { position: absolute; left: 3.5%; bottom: 3.5%; padding: 7px 10px; border: 2px double rgba(145,92,80,.38); color: rgba(180,119,104,.43); font-weight: 700; line-height: 1.35; transform: rotate(-3deg); }
 .record-home-meta { position: absolute; z-index: 12; left: 23px; right: 23px; top: 13px; display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid rgba(217,203,183,.35); font: 9px "Courier New",monospace; letter-spacing: .13em; }
 .madonna-memory-wall { position: absolute; inset: 34px 0 0; z-index: 0; overflow: hidden; pointer-events: none; }
 .madonna-memory-wall::before { content: ""; position: absolute; z-index: 4; inset: -20% 0; background: linear-gradient(105deg, transparent 25%, rgba(217,203,183,.055) 43%, transparent 58%); transform: translateX(-65%); animation: projector-sweep 8s linear infinite; }
@@ -165,9 +170,10 @@ a { text-decoration: none; }
 @keyframes projector-sweep { 0% { transform: translateX(-65%); } 48%,100% { transform: translateX(70%); } }
 @keyframes scan-pass { from { transform: translateY(0); } to { transform: translateY(125vh); } }
 .record-object { position: absolute; z-index: 2; inset: 7% 2% 19%; }
-.record-cover { position: absolute; z-index: 2; width: min(50vw,620px); aspect-ratio: 1; left: 3%; top: 50%; overflow: hidden; padding: 30px; color: #211c1b; background: #9d826e; box-shadow: 15px 19px 35px rgba(0,0,0,.34); transform: translate(-24vw,-43%) rotate(-14deg); animation: cover-settle 1.45s .15s cubic-bezier(.16,.84,.2,1) forwards; font: 10px "Courier New",monospace; }
-.record-cover::after { content: ""; position: absolute; width: 66%; aspect-ratio: 1; right: -20%; bottom: -18%; border: 40px solid rgba(39,30,27,.52); border-radius: 50%; }
-.record-cover i { position: absolute; left: 34px; bottom: -46px; color: rgba(231,215,192,.6); font: italic 190px/.8 Georgia,serif; }
+.record-cover { position: absolute; z-index: 2; width: min(50vw,620px); aspect-ratio: 1; left: 3%; top: 50%; overflow: hidden; padding: 30px; color: #211c1b; background-color: #9d826e; background-image: radial-gradient(circle at 18% 12%, rgba(239,217,186,.16), transparent 26%), linear-gradient(92deg, rgba(66,45,38,.11), transparent 3%, transparent 96%, rgba(66,45,38,.16)), repeating-linear-gradient(3deg, transparent 0 8px, rgba(54,39,34,.018) 8px 9px), url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.63' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)' opacity='.18'/%3E%3C/svg%3E"); border: 1px solid rgba(52,37,32,.48); box-shadow: inset 0 0 28px rgba(67,45,39,.18), inset 9px 0 14px rgba(49,34,30,.09), 15px 19px 35px rgba(0,0,0,.34); transform: translate(-24vw,-43%) rotate(-14deg); animation: cover-settle 1.45s .15s cubic-bezier(.16,.84,.2,1) forwards; font: 10px "Courier New",monospace; }
+.record-cover::before { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: linear-gradient(132deg, transparent 0 72%, rgba(48,33,29,.13) 72.2%, transparent 72.7%), linear-gradient(12deg, transparent 0 18%, rgba(236,210,177,.08) 18.2%, transparent 18.8%); box-shadow: inset 0 0 0 7px rgba(67,47,41,.055); mix-blend-mode: multiply; }
+.record-cover::after { content: ""; position: absolute; z-index: 1; width: 66%; aspect-ratio: 1; right: -20%; bottom: -18%; border: 40px solid rgba(39,30,27,.48); border-radius: 50%; box-shadow: 0 0 0 2px rgba(229,202,169,.08), inset 0 0 0 2px rgba(229,202,169,.08); }
+.record-cover i { position: absolute; z-index: 2; left: 34px; bottom: -46px; color: rgba(231,215,192,.6); font: italic 190px/.8 Georgia,serif; }
 .cover-kicker { position: relative; z-index: 3; display: block; font-size: 12px; font-weight: 700; line-height: 1.25; letter-spacing: .06em; }
 .cover-content { position: absolute; z-index: 3; left: 8%; top: 21%; width: 60%; }
 .cover-file { display: block; padding-bottom: 10px; border-bottom: 1px solid rgba(33,28,27,.58); font-size: 11px; font-weight: 700; letter-spacing: .09em; }
@@ -178,23 +184,50 @@ a { text-decoration: none; }
 .cover-metadata dd { margin: 0; font-size: 11px; font-weight: 700; line-height: 1.4; letter-spacing: .05em; }
 .cover-source { position: absolute; z-index: 3; left: 8%; bottom: 9%; font-size: 9px; font-weight: 700; letter-spacing: .07em; }
 .cover-stamp { position: absolute; z-index: 3; right: 7%; top: 7%; padding: 7px 9px; border: 3px double rgba(90,49,49,.78); color: rgba(90,49,49,.86); font: 700 11px/1.05 "Courier New",monospace; text-align: center; transform: rotate(7deg); }
-.record-disc { position: absolute; z-index: 3; width: min(45vw,570px); height: auto; right: 6%; top: 50%; filter: drop-shadow(18px 24px 24px rgba(0,0,0,.48)); transform: translate(27vw,-43%) rotate(168deg); animation: disc-settle 1.7s .22s cubic-bezier(.16,.84,.2,1) forwards; }
-.record-needle { position: absolute; z-index: 4; width: min(23vw,290px); height: 2px; right: 4%; top: 36%; background: #9d7c5d; transform-origin: 100% 50%; transform: rotate(-67deg); opacity: 0; animation: needle-settle .75s 1.35s ease forwards; }
+.cover-barcode { position: absolute; z-index: 3; right: 6%; bottom: 6%; width: 58px; height: 25px; opacity: .45; background: repeating-linear-gradient(90deg,#211c1b 0 1px,transparent 1px 3px,#211c1b 3px 5px,transparent 5px 7px); border-bottom: 4px solid transparent; }
+.cover-tape { position: absolute; z-index: 4; width: 90px; height: 24px; left: 42%; top: -5px; background: rgba(211,190,157,.28); border-left: 1px solid rgba(80,57,48,.15); border-right: 1px solid rgba(80,57,48,.15); transform: rotate(-2deg); box-shadow: 0 2px 5px rgba(60,42,36,.08); }
+.record-disc-stage { position: absolute; z-index: 3; width: min(45vw,570px); aspect-ratio: 1; right: 6%; top: 50%; filter: drop-shadow(18px 24px 24px rgba(0,0,0,.48)); transform: translate(27vw,-43%) rotate(168deg); animation: disc-settle 1.7s .22s cubic-bezier(.16,.84,.2,1) forwards; }
+.record-disc { display: block; width: 100%; height: auto; animation: disc-play 18s 1.9s linear infinite; }
+.record-grooves { position: absolute; inset: 0; z-index: 4; border-radius: 50%; pointer-events: none; transform: rotate(7deg); }
+.groove { position: absolute; left: 50%; top: 50%; aspect-ratio: 1; border: 1px solid transparent; border-radius: 50%; transform: translate(-50%,-50%); transition: border-color .22s, box-shadow .22s, opacity .22s; opacity: 0; }
+.groove-one { width: 86%; }
+.groove-two { width: 70%; }
+.groove-three { width: 54%; }
+.track-1 { --arm-angle: -38deg; --groove-size: 86%; }
+.track-2 { --arm-angle: -33deg; --groove-size: 70%; }
+.track-3 { --arm-angle: -27deg; --groove-size: 54%; }
+.track-1 .groove-one, .track-2 .groove-two, .track-3 .groove-three { opacity: 1; border-color: rgba(206,162,115,.82); box-shadow: 0 0 0 2px rgba(72,42,35,.55), 0 0 18px rgba(206,162,115,.42), inset 0 0 18px rgba(206,162,115,.18); }
+.turntable-arm { position: absolute; z-index: 7; right: 1.4%; top: 8%; width: min(29vw,390px); height: min(39vw,520px); opacity: 0; animation: tonearm-arrive .9s 1.24s ease forwards; pointer-events: none; filter: drop-shadow(7px 10px 8px rgba(0,0,0,.5)); }
+.tonearm-base { position: absolute; right: 0; top: 0; width: clamp(68px,7.4vw,100px); aspect-ratio: 1; border: 1px solid rgba(225,204,175,.42); border-radius: 50%; background: radial-gradient(circle,#2a2321 0 21%,#927657 22% 25%,#312826 26% 49%,#80664d 50% 53%,#171312 54%); box-shadow: inset 0 0 18px rgba(0,0,0,.65), 0 9px 14px rgba(0,0,0,.4); }
+.tonearm-base i { position: absolute; inset: 13%; border-radius: 50%; border: 1px dashed rgba(217,203,183,.28); }
+.tonearm-pivot { position: absolute; z-index: 4; right: clamp(24px,2.7vw,36px); top: clamp(24px,2.7vw,36px); width: 24px; aspect-ratio: 1; border: 3px solid #a88b67; border-radius: 50%; background: #211a18; box-shadow: inset 0 0 0 3px #5d4a3a; }
+.tonearm-assembly { position: absolute; z-index: 3; right: clamp(35px,3.7vw,48px); top: clamp(35px,3.7vw,48px); width: min(27vw,355px); height: 32px; transform-origin: calc(100% - 2px) 50%; transform: rotate(var(--arm-angle)); transition: transform .48s cubic-bezier(.2,.8,.2,1), translate .18s ease; }
+.tonearm-weight { position: absolute; right: -35px; top: 6px; width: 58px; height: 20px; border-radius: 9px; background: linear-gradient(#937b5e,#3f342e 42%,#1d1816 58%,#715b47); border: 1px solid #a38765; }
+.tonearm-bar { position: absolute; left: 22px; right: 8px; top: 14px; height: 5px; border-radius: 4px; background: linear-gradient(#d0b589,#735f49 48%,#3e332c 52%,#b0916a); box-shadow: 0 1px 0 rgba(255,255,255,.22); }
+.tonearm-head { position: absolute; left: 0; top: 5px; width: 34px; height: 23px; border: 1px solid #8f7659; border-radius: 2px 8px 3px 2px; background: linear-gradient(100deg,#2a2421,#5c4c3f); transform: rotate(-4deg); }
+.tonearm-head b { position: absolute; left: 2px; bottom: -8px; width: 1px; height: 9px; background: #d1b786; transform: rotate(12deg); transform-origin: top; }
+.record-home.is-dropping .tonearm-assembly { translate: 0 4px; }
+.record-home.is-dropping .tonearm-head b { height: 13px; background: #e3c899; }
+.record-home.is-dropping .record-disc { animation-duration: 3.8s; }
 .record-home-title { position: absolute; z-index: 6; left: 50%; bottom: 9.3%; width: min(92vw,1000px); transform: translateX(-50%); text-align: center; opacity: 0; animation: record-title-in .7s 1.55s ease forwards; }
 .record-home-title span, .record-home-title p { font: 9px "Courier New",monospace; letter-spacing: .18em; }
 .record-home-title h1 { margin: 5px 0 2px; color: #ded2c0; font: 400 clamp(39px,5.1vw,72px)/.95 Georgia,serif; letter-spacing: -.045em; }
 .record-home-title p { margin: 0; color: #c0b2a1; }
 .record-home-title .record-home-summary { margin-top: 7px; font-family: Arial,"Noto Sans SC",sans-serif; font-size: 11px; letter-spacing: .08em; color: #9f9284; }
 .record-entry-menu { position: absolute; z-index: 13; left: 50%; bottom: 2.1%; display: flex; gap: 8px; transform: translateX(-50%); opacity: 0; animation: record-menu-in .55s 2.1s ease forwards; }
-.record-entry { width: clamp(150px,16vw,205px); min-height: 38px; padding: 7px 10px; display: grid; grid-template-columns: 22px auto; grid-template-rows: auto auto; column-gap: 8px; align-items: center; border: 1px solid rgba(217,203,183,.52); color: #d8cdbc; background: rgba(29,24,23,.75); backdrop-filter: blur(5px); transition: color .16s, background .16s, transform .16s; }
+.record-entry { position: relative; width: clamp(150px,16vw,205px); min-height: 38px; padding: 7px 10px; display: grid; grid-template-columns: 22px 7px auto; grid-template-rows: auto auto; column-gap: 7px; align-items: center; border: 1px solid rgba(217,203,183,.52); color: #d8cdbc; background: rgba(29,24,23,.75); backdrop-filter: blur(5px); transition: color .16s, background .16s, transform .16s; }
 .record-entry > span { grid-row: 1 / 3; font: 9px "Courier New",monospace; color: #b79273; }
+.record-entry > i { grid-row: 1 / 3; width: 5px; aspect-ratio: 1; border: 1px solid #a78567; border-radius: 50%; box-shadow: 0 0 0 3px rgba(167,133,103,.1); }
 .record-entry strong { font: 400 14px/1 Georgia,serif; }
 .record-entry small { font: 7px "Courier New",monospace; letter-spacing: .05em; color: #9f9284; }
 .record-entry:hover, .record-entry:focus-visible { color: #171413; background: #d8cdbc; transform: translateY(-4px); outline: none; }
+.record-entry:hover > i, .record-entry:focus-visible > i { background: #7f453f; border-color: #7f453f; box-shadow: 0 0 9px rgba(127,69,63,.8); }
 .record-entry:hover small, .record-entry:focus-visible small { color: #5f504b; }
 @keyframes cover-settle { to { transform: translate(0,-43%) rotate(-5deg); } }
 @keyframes disc-settle { to { transform: translate(0,-43%) rotate(-7deg); } }
-@keyframes needle-settle { to { opacity: 1; transform: rotate(-39deg); } }
+@keyframes disc-play { to { transform: rotate(360deg); } }
+@keyframes tonearm-arrive { from { opacity: 0; transform: translate(20px,-18px); } to { opacity: 1; transform: translate(0,0); } }
+@keyframes sleeve-glare { from { transform: translateX(-5%); opacity: .4; } to { transform: translateX(6%); opacity: .95; } }
 @keyframes record-title-in { from { opacity: 0; transform: translate(-50%,12px); } to { opacity: 1; transform: translate(-50%,0); } }
 @keyframes record-menu-in { from { opacity: 0; transform: translate(-50%,8px); } to { opacity: 1; transform: translate(-50%,0); } }
 
@@ -357,8 +390,8 @@ a { text-decoration: none; }
 @media (max-width: 1000px) {
   .section-shell { width: min(calc(100% - 64px), var(--max)); }
   .record-cover { left: -2%; width: 56vw; }
-  .record-disc { right: 1%; width: 51vw; }
-  .record-needle { right: 0; }
+  .record-disc-stage { right: 1%; width: 51vw; }
+  .turntable-arm { right: -2%; }
   .record-home-title { bottom: 10.5%; }
   .hero-home-inner { width: calc(100% - 64px); }
   .game-vinyl { right: -8%; width: 58vw; }
@@ -396,8 +429,12 @@ a { text-decoration: none; }
   .memory-frame-three { display: none; }
   .record-object { inset: 5% 0 25%; }
   .record-cover { width: min(82vw,480px); left: -22%; top: 47%; padding: 20px; }
-  .record-disc { width: min(76vw,450px); right: -18%; top: 47%; }
-  .record-needle { width: 38vw; right: -8%; top: 33%; }
+  .record-disc-stage { width: min(76vw,450px); right: -18%; top: 47%; }
+  .turntable-arm { right: -13%; top: 8%; width: min(57vw,300px); height: min(64vw,350px); }
+  .tonearm-assembly { width: min(50vw,270px); }
+  .packaging-spine { display: none; }
+  .packaging-sticker { right: 1%; top: 5%; transform: scale(.82) rotate(2deg); }
+  .packaging-note { display: none; }
   .record-home-title { bottom: 15%; }
   .record-home-title h1 { font-size: clamp(31px,9.2vw,48px); }
   .record-home-title span, .record-home-title p { font-size: 7px; }

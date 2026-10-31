@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useRef, useState, type MouseEvent } from "react";
 
 const modules = [
   {
@@ -13,11 +18,39 @@ const modules = [
 ];
 
 export function Hero() {
+  const router = useRouter();
+  const navigationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [selectedTrack, setSelectedTrack] = useState<string | null>(null);
+  const [isDropping, setIsDropping] = useState(false);
+
+  function chooseTrack(event: MouseEvent<HTMLAnchorElement>, href: string) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    event.preventDefault();
+    if (navigationTimer.current) clearTimeout(navigationTimer.current);
+    setSelectedTrack(href);
+    setIsDropping(true);
+    navigationTimer.current = setTimeout(() => router.push(href), 520);
+  }
+
+  const trackClass = selectedTrack
+    ? ` track-${modules.findIndex((module) => module.href === selectedTrack) + 1}`
+    : "";
+
   return (
-    <section id="top" className="record-home">
+    <section
+      id="top"
+      className={`record-home${trackClass}${isDropping ? " is-dropping" : ""}`}
+    >
       <div className="record-home-meta">
         <span>ARCHIVE NO. 007</span>
         <span>PLAYING / MEMORY</span>
+      </div>
+
+      <div className="record-packaging" aria-hidden="true">
+        <span className="packaging-spine">THE MADONNA ARCHIVE · MEDIA / MEMORY · FILE 007</span>
+        <span className="packaging-sticker">STEREO<br />33⅓ RPM</span>
+        <span className="packaging-note">PROPERTY OF<br />MEMORY UNIT</span>
       </div>
 
       <div className="madonna-memory-wall" aria-hidden="true">
@@ -48,17 +81,35 @@ export function Hero() {
           </div>
           <span className="cover-source">MEDIA AND MEMORY · CH. 07 · PP. 120—135</span>
           <span className="cover-stamp">ARCHIVE<br />COPY</span>
+          <span className="cover-barcode" />
+          <span className="cover-tape" />
           <i>07</i>
         </div>
-        <Image
-          className="record-disc"
-          src="/images/hero-vinyl.png"
-          alt="磨损黑胶唱片，唱片中心为八十年代流行文化风格的麦当娜肖像"
-          width={1200}
-          height={1200}
-          priority
-        />
-        <span className="record-needle" aria-hidden="true" />
+        <div className="record-disc-stage">
+          <Image
+            className="record-disc"
+            src="/images/hero-vinyl.png"
+            alt="磨损黑胶唱片，唱片中心为八十年代流行文化风格的麦当娜肖像"
+            width={1200}
+            height={1200}
+            priority
+          />
+          <div className="record-grooves" aria-hidden="true">
+            <span className="groove groove-one" />
+            <span className="groove groove-two" />
+            <span className="groove groove-three" />
+          </div>
+        </div>
+
+        <div className="turntable-arm" aria-hidden="true">
+          <span className="tonearm-base"><i /></span>
+          <span className="tonearm-pivot" />
+          <span className="tonearm-assembly">
+            <i className="tonearm-weight" />
+            <i className="tonearm-bar" />
+            <i className="tonearm-head"><b /></i>
+          </span>
+        </div>
       </div>
 
       <div className="record-home-title">
@@ -68,13 +119,27 @@ export function Hero() {
         <p className="record-home-summary">一座关于名人、衰老与粉丝怀旧的互动记忆档案。</p>
       </div>
 
-      <nav className="record-entry-menu" aria-label="选择互动模块">
+      <nav
+        className="record-entry-menu"
+        aria-label="选择互动模块"
+        onMouseLeave={() => !isDropping && setSelectedTrack(null)}
+      >
           {modules.map((module) => (
-            <a className="record-entry" href={module.href} key={module.href}>
+            <Link
+              className="record-entry"
+              href={module.href}
+              key={module.href}
+              onMouseEnter={() => !isDropping && setSelectedTrack(module.href)}
+              onFocus={() => !isDropping && setSelectedTrack(module.href)}
+              onBlur={() => !isDropping && setSelectedTrack(null)}
+              onClick={(event) => chooseTrack(event, module.href)}
+              aria-label={`${module.number} ${module.title} ${module.eyebrow}`}
+            >
               <span>{module.number}</span>
+              <i aria-hidden="true" />
               <strong>{module.title}</strong>
               <small>{module.eyebrow}</small>
-            </a>
+            </Link>
           ))}
       </nav>
     </section>
