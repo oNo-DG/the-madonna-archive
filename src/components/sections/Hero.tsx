@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useRef, useState, type MouseEvent } from "react";
 import { archiveModules, RecordSleeveNavigation } from "./RecordSleeveNavigation";
 
+const assetPath = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/hero-vinyl.png`;
+
 export function Hero() {
   const router = useRouter();
   const navigationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -43,13 +45,13 @@ export function Hero() {
 
       <div className="madonna-memory-wall" aria-hidden="true">
         <div className="memory-frame memory-frame-one">
-          <Image src="/images/hero-vinyl.png" alt="" width={1200} height={1200} loading="eager" />
+          <Image src={assetPath} alt="" width={1200} height={1200} loading="eager" />
         </div>
         <div className="memory-frame memory-frame-two">
-          <Image src="/images/hero-vinyl.png" alt="" width={1200} height={1200} loading="eager" />
+          <Image src={assetPath} alt="" width={1200} height={1200} loading="eager" />
         </div>
         <div className="memory-frame memory-frame-three">
-          <Image src="/images/hero-vinyl.png" alt="" width={1200} height={1200} loading="eager" />
+          <Image src={assetPath} alt="" width={1200} height={1200} loading="eager" />
         </div>
       </div>
 
@@ -77,7 +79,7 @@ export function Hero() {
         <div className="record-disc-stage">
           <Image
             className="record-disc"
-            src="/images/hero-vinyl.png"
+            src={assetPath}
             alt="磨损黑胶唱片，唱片中心为八十年代流行文化风格的麦当娜肖像"
             width={1200}
             height={1200}
