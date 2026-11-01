@@ -36,11 +36,11 @@ jobs:
         env:
           GITHUB_PAGES: "true"
       - name: Disable Jekyll processing
-        run: touch out/.nojekyll
+        run: touch .next-pages/.nojekyll
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: out
+          path: .next-pages
 
   deploy:
     environment:
