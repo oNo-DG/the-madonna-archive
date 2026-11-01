@@ -17,8 +17,8 @@ export const archiveModules: ArchiveModule[] = [
   {
     number: "01",
     href: "/media",
-    eyebrow: "CHAPTER READING",
-    title: "章节研究",
+    eyebrow: "CHAPTER INTRODUCTION",
+    title: "章节介绍",
     theme: "media",
     marker: "READ / MAP",
   },
