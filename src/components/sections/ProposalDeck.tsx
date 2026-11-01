@@ -18,7 +18,12 @@ export function ProposalDeck() {
       description: item.zh,
       className: "proposal-deck-scene",
       content: <div className="proposal-deck-file">
-        <div className="proposal-scan-visual" aria-hidden="true"><div className="proposal-digital-record"><span>{String(index + 1).padStart(2, "0")}</span></div><i /><i /><i /></div>
+        <div className={`proposal-scan-visual proposal-visual-${item.visual}`} aria-hidden="true">
+          <span className="proposal-visual-label">PROTOTYPE VIEW / {String(index + 1).padStart(2, "0")}</span>
+          <div className="proposal-visual-core"><b>{item.id}</b><small>{item.visual}</small></div>
+          <i /><i /><i /><i /><i />
+          <em>MEMORY</em><em>MEDIA</em><em>BODY</em>
+        </div>
         <div className="proposal-deck-copy">
           <p className="proposal-deck-question">{item.question}</p>
           <dl><div><dt>INPUT / 输入</dt><dd>{item.input}</dd></div><div><dt>INTERACTION / 交互</dt><dd>{item.interaction}</dd></div><div><dt>OUTPUT / 输出</dt><dd>{item.output}</dd></div><div><dt>ETHICS / 伦理</dt><dd>{item.ethics}</dd></div></dl>

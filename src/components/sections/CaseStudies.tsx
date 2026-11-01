@@ -13,8 +13,8 @@ export function CaseStudies() {
     <section className="section-shell section-pad practice-section">
       <SectionLabel index="02">RELATED PRACTICES / 相关实践案例</SectionLabel>
       <div className="section-heading split-heading">
-        <h2>SIX WAYS<br />MEMORY MOVES.</h2>
-        <p>六个案例均来自项目作者或机构的官方资料。左侧陈述项目事实，右侧“章节关联”属于本网页基于第七章的分析。</p>
+        <h2>FIVE WAYS<br />MEMORY MOVES.</h2>
+        <p>四项实践项目与一项设计研究均来自项目作者或机构的官方资料；项目事实与具体实践可核验，“章节关联”属于本网页基于第七章的分析。</p>
       </div>
       <div className="practice-layout">
         <div className="practice-index" role="tablist" aria-label="设计案例">
@@ -32,6 +32,7 @@ export function CaseStudies() {
             <p className="practice-maker">{active.maker}</p>
             <dl>
               <div><dt>PROJECT FACT / 项目事实</dt><dd>{active.fact}</dd></div>
+              <div><dt>IN PRACTICE / 具体实践</dt><dd>{active.practice}</dd></div>
               <div><dt>CHAPTER RELATION / 章节关联</dt><dd>{active.relation}</dd></div>
             </dl>
             <a href={active.source} target="_blank" rel="noreferrer">OFFICIAL SOURCE ↗</a>
