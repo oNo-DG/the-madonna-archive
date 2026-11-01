@@ -8,11 +8,18 @@ const argumentsList = [
   ["04", "FAN NOSTALGIA", "怀旧维持个人连续感，也能被文化产业重新包装和销售。"],
 ];
 
+const readingPath = [
+  ["01", "ENCOUNTER", "从作者对 1984 年电视表演的矛盾记忆进入问题。", "pp. 120–122"],
+  ["02", "COLLECTION", "粉丝收藏让商品在使用、磨损和叙述中成为记忆档案。", "pp. 122–129"],
+  ["03", "AGEING", "旧影像与变化中的身体发生冲突，暴露性别化年龄判断。", "pp. 129–132"],
+  ["04", "NOSTALGIA", "精选、重制和平台再传播把怀旧转化为文化资源。", "pp. 132–134"],
+];
+
 export function ChapterResearch() {
   return (
     <section id="chapter" className="chapter-section">
       <div className="section-shell section-pad">
-        <SectionLabel index="02">CHAPTER RESEARCH / 章节研究</SectionLabel>
+        <SectionLabel index="01-A">CHAPTER CONTENT / 章节内容</SectionLabel>
         <div className="chapter-intro">
           <div>
             <span className="eyebrow">CENTRAL QUESTION</span>
@@ -38,11 +45,26 @@ export function ChapterResearch() {
           ))}
         </div>
 
+        <div className="chapter-map">
+          <span className="eyebrow">PROJECT READING MAP / 本项目的章节阅读结构</span>
+          {readingPath.map(([num, title, copy, page]) => (
+            <article key={num}><span>{num}</span><strong>{title}</strong><p>{copy}</p><small>{page}</small></article>
+          ))}
+        </div>
+
         <div className="theory-strip">
           <span className="eyebrow">THREE MODES IN THE CHAPTER</span>
           <div><strong>MODE 1</strong><p>Celebrity & memory<br /><small>名人与文化档案</small></p></div>
           <div><strong>MODE 2</strong><p>Ageing<br /><small>身体、影像与时间</small></p></div>
           <div><strong>MODE 3</strong><p>Fan nostalgia<br /><small>怀旧与文化产业</small></p></div>
+        </div>
+
+        <div className="chapter-commentary">
+          <span className="eyebrow">CRITICAL COMMENTARY / 批判性评论</span>
+          <div>
+            <p>章节的价值在于把个人回忆、粉丝实践、明星身体与文化产业放进同一套媒介记忆关系，而不是把怀旧理解为单纯情绪。</p>
+            <p>其限制也需要保留：个人经验不能代表所有粉丝，平台保存不等于中立档案，能够被搜索和持续流通的版本往往由版权、算法与商业资源共同决定。</p>
+          </div>
         </div>
       </div>
     </section>

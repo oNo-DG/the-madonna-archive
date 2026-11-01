@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const modules = [
-  ["01", "媒介考古", "/media"],
-  ["02", "时间回放", "/timeline"],
-  ["03", "动态档案", "/archive"],
+  ["01", "章节研究", "/media"],
+  ["02", "案例研究", "/timeline"],
+  ["03", "设计延伸", "/archive"],
 ];
 
 export function ModuleHeader({ current }: { current: string }) {

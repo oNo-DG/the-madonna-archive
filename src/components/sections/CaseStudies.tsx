@@ -1,58 +1,44 @@
-import { SectionLabel } from "@/components/common/SectionLabel";
-import { SourceMarker } from "@/components/common/SourceMarker";
+"use client";
 
-const cases = [
-  {
-    no: "CASE 01",
-    year: "1984 → 2010",
-    title: "LIKE A VIRGIN / REVISITED",
-    question: "同一作品为何会在不同生命阶段产生不同意义？",
-    finding: "媒介作品既保存公众形象，也成为个人自传式记忆的入口。",
-    pages: "pp. 120–122",
-  },
-  {
-    no: "CASE 02",
-    year: "2009",
-    title: "THE AGEING IMAGE",
-    question: "数字媒介的持续保存，如何改变公众面对衰老的方式？",
-    finding: "过去的精修图像与变化中的身体被并置，名人与粉丝都难以从旧日形象中退出。",
-    pages: "pp. 129–132",
-  },
-  {
-    no: "CASE 03",
-    year: "2009",
-    title: "CELEBRATION / NOSTALGIA",
-    question: "怀旧何时从私人情感转化为可经营的文化资源？",
-    finding: "精选、重制与视觉再包装同时服务于记忆连续性和新的商品流通。",
-    pages: "pp. 132–134",
-  },
-];
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { SectionLabel } from "@/components/common/SectionLabel";
+import { practiceCases } from "@/content/research";
 
 export function CaseStudies() {
+  const [activeId, setActiveId] = useState(practiceCases[0].id);
+  const active = practiceCases.find((item) => item.id === activeId) ?? practiceCases[0];
+
   return (
-    <section id="cases" className="section-shell section-pad case-section">
-      <SectionLabel index="05">CASE INDEX / 案例索引</SectionLabel>
+    <section className="section-shell section-pad practice-section">
+      <SectionLabel index="02">RELATED PRACTICES / 相关实践案例</SectionLabel>
       <div className="section-heading split-heading">
-        <h2>THREE WAYS<br />TO READ TIME.</h2>
-        <p>三个案例不是额外史料，而是对章节叙事的结构化归纳。它们共同指向记忆、身体和商业之间的张力。</p>
+        <h2>SIX WAYS<br />MEMORY MOVES.</h2>
+        <p>六个案例均来自项目作者或机构的官方资料。左侧陈述项目事实，右侧“章节关联”属于本网页基于第七章的分析。</p>
       </div>
-      <div className="case-list">
-        {cases.map((item) => (
-          <article key={item.no}>
-            <div className="case-id"><span>{item.no}</span><strong>{item.year}</strong></div>
-            <h3>{item.title}</h3>
+      <div className="practice-layout">
+        <div className="practice-index" role="tablist" aria-label="设计案例">
+          {practiceCases.map((item) => (
+            <button key={item.id} className={activeId === item.id ? "active" : ""} onClick={() => setActiveId(item.id)} role="tab" aria-selected={activeId === item.id}>
+              <span>{item.id}</span><strong>{item.title}</strong><small>{item.year}</small>
+            </button>
+          ))}
+        </div>
+        <AnimatePresence mode="wait">
+          <motion.article key={active.id} className="practice-file" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -14 }} transition={{ duration: 0.3 }}>
+            <div className="practice-disc" aria-hidden="true"><span>{active.id}</span></div>
+            <span className="eyebrow">{active.year} / {active.medium}</span>
+            <h3>{active.title}</h3>
+            <p className="practice-maker">{active.maker}</p>
             <dl>
-              <div><dt>QUESTION</dt><dd>{item.question}</dd></div>
-              <div><dt>READING</dt><dd>{item.finding}</dd></div>
+              <div><dt>PROJECT FACT / 项目事实</dt><dd>{active.fact}</dd></div>
+              <div><dt>CHAPTER RELATION / 章节关联</dt><dd>{active.relation}</dd></div>
             </dl>
-            <SourceMarker id="S-001" page={item.pages} />
-          </article>
-        ))}
+            <a href={active.source} target="_blank" rel="noreferrer">OFFICIAL SOURCE ↗</a>
+          </motion.article>
+        </AnimatePresence>
       </div>
-      <div className="critical-note">
-        <span>CRITICAL REFLECTION / 批判性反思</span>
-        <p>粉丝的个人记忆不等于历史事实，文化记忆也不意味着所有人拥有同一种回忆。档案总是在选择：什么被保存、谁有权解释、哪些版本更容易被平台看见。</p>
-      </div>
+      <p className="research-boundary">RESEARCH BOUNDARY / 案例描述依据官方项目页面；“章节关联”为课程项目的分析，不代表项目原作者的自我阐释。</p>
     </section>
   );
 }

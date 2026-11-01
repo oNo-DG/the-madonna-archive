@@ -22,10 +22,10 @@ export function MediaArchaeology() {
 
   return (
     <section id="media" className="section-shell section-pad media-section">
-      <SectionLabel index="01">MEDIA ARCHAEOLOGY / 媒介考古</SectionLabel>
+      <SectionLabel index="01-B">VISUAL ANALYSIS / 媒介结构可视化</SectionLabel>
       <div className="section-heading split-heading">
         <h2>FROM SIGNAL<br />TO SHARED MEMORY</h2>
-        <p>选择媒介形态，观察粉丝从接收者、收藏者到公开参与者的变化。阶段彼此重叠，并非严格线性历史。</p>
+        <p>选择媒介形态，观察章节中的记忆如何从观看、收藏走向公开参与；“平台”部分明确标记为本项目的当代延伸。</p>
       </div>
 
       <div className="media-tabs" role="tablist" aria-label="媒介形态">
