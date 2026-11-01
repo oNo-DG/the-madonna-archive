@@ -19,6 +19,8 @@ export function CaseDeck() {
       className: "case-deck-scene",
       content: <div className="case-deck-file">
         <div className="case-deck-record" aria-hidden="true"><span>{String(index + 1).padStart(2, "0")}</span></div>
+        <div className="case-deck-tonearm" aria-hidden="true" />
+        <div className="case-deck-playing" aria-hidden="true"><i /> PLAYING / CASE {String(index + 1).padStart(2, "0")}</div>
         <div className="case-facts"><span>PROJECT FACT / 项目事实</span><p>{item.fact}</p></div>
         <div className="case-relation"><span>CHAPTER RELATION / 章节关联</span><p>{item.relation}</p></div>
         <a href={item.source} target="_blank" rel="noreferrer">OFFICIAL SOURCE ↗</a>
