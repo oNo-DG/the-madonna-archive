@@ -2,35 +2,43 @@
 
 import { ImmersiveDeck, type DeckSlide } from "@/components/layout/ImmersiveDeck";
 
-const researchQuestions = [
-  ["01", "FAN MEMORY", "粉丝如何用评论、收藏与模仿，把流行文化连接到自己的生命史？"],
-  ["02", "ARCHIVE POWER", "官方产业与草根粉丝，分别在选择哪些材料进入“麦当娜档案”？"],
-  ["03", "AGEING", "当年轻影像持续循环，真实衰老的女性身体为何成为冲突现场？"],
-  ["04", "NOSTALGIA", "怀旧何时是身份与情感实践，何时又被转化为可销售的遗产？"],
+const mediaMaterials = [
+  ["01", "MUSIC VIDEO", "音乐录像"],
+  ["02", "HISTORICAL IMAGE", "历史照片"],
+  ["03", "FAN COLLECTION", "粉丝收藏"],
+  ["04", "ONLINE COMMENT", "网络评论"],
+  ["05", "PERFORMANCE", "演出影像"],
 ];
 
-const chapterPath = [
-  ["01", "ENTRY", "问题进入", "从作者重看 1984 年《Like a Virgin》的个人记忆与 YouTube 评论进入研究。", "120–122"],
-  ["02", "FRAME", "理论框架", "以流行记忆、文化工业与粉丝研究，说明消费并不排除主动意义生产。", "122–125"],
-  ["03", "MODE 1", "名人与记忆", "粉丝记忆把名人锚定在时间中，并参与建构其文化遗产与“身后价值”。", "125–129"],
-  ["04", "MODE 2", "衰老", "年轻旧影像与衰老身体并置，显露性别化年龄规范与数字记忆的残酷。", "129–132"],
-  ["05", "MODE 3", "粉丝怀旧", "怀旧连接个人与集体传记，也让明星及其旧作成为可经营的遗产产业。", "132–135"],
+const chapterModes = [
+  ["01", "CELEBRITY & MEMORY", "名人与记忆", "公众形象如何被保存、讨论和共同创造", "SYMBOLIC IMMORTALITY"],
+  ["02", "AGEING", "衰老", "年轻档案影像如何与现实身体发生冲突", "GENDERED EXPECTATION"],
+  ["03", "FAN NOSTALGIA", "粉丝怀旧", "旧作品如何连接生命经历并产生新价值", "PERSONAL · COLLECTIVE · COMMERCIAL"],
 ];
 
-const archiveEvidence = [
-  ["A", "LIKE A VIRGIN", "旧视频下的回忆、技术分析与身份叙述，使观看行为成为公开的记忆劳动。", "PP. 120–122"],
-  ["B", "PICTURE PROJECT", "官方项目收集两千余张粉丝藏品照片，模糊企业策展与草根收藏的边界。", "PP. 122–125"],
-  ["C", "AGEING IMAGES", "新闻、广告与未修图影像围绕她的身体争论，暴露女性衰老受到的双重标准。", "PP. 129–132"],
-  ["D", "CELEBRATION", "精选辑与波普化封面重新包装旧作，把档案、怀旧与未来市场连接起来。", "PP. 132–134"],
+const archiveActions = [
+  ["保存", "SAVE", "让音乐、照片与表演持续可见"],
+  ["选择", "SELECT", "决定哪些版本进入公共记忆"],
+  ["解释", "INTERPRET", "把媒介材料连接到个人经验"],
+  ["分享", "SHARE", "让私人回忆进入集体讨论"],
+  ["重构", "REMAKE", "在当下重新定义过去的意义"],
 ];
 
-const furtherReading = [
-  ["01", "BIJSTERVELD & VAN DIJCK", "Sound Souvenirs: Audio Technologies, Memory and Cultural Practices", "2009"],
-  ["02", "BRABAZON", "From Revolution to Revelation: Generation X, Popular Memory and Cultural Studies", "2005"],
-  ["03", "FRITH", "Taking Popular Music Seriously: Selected Essays", "2007"],
-  ["04", "KALOSKI NAYLOR", "Michael Jackson’s Post-Self", "2010"],
-  ["05", "PICKERING & KEIGHTLEY", "The Modalities of Nostalgia", "2006"],
-  ["06", "SNYDER", "Music and Memory: An Introduction", "2000"],
+const criticalReading = [
+  ["CONTRIBUTION 01", "受众不是被动消费者", "粉丝通过整理、收藏、讨论与模仿，直接参与集体记忆的形成。"],
+  ["CONTRIBUTION 02", "数字档案具有双重作用", "网络既保存文化遗产，也让未经修饰的材料和负面评价持续流通。"],
+  ["CONTRIBUTION 03", "记忆与商业权力相互缠绕", "产业可以把怀旧转化为商品，但粉丝仍能生成超出商业意图的意义。"],
+  ["LIMIT 01", "明星案例的代表性有限", "麦当娜拥有庞大资源和全球粉丝，其形象控制能力不一定适用于普通音乐人。"],
+  ["LIMIT 02", "平台材料带有时代背景", "章节主要讨论二〇〇九至二〇一〇年前后的数字平台与网络实践。"],
+];
+
+const summaryIndex = [
+  ["CELEBRITY", "名人与记忆", "形象由明星、产业与粉丝共同建构"],
+  ["ARCHIVE", "数字档案", "既能保存遗产，也可能暴露形象"],
+  ["AGEING", "衰老", "女性名人承受持续的年龄与外貌评判"],
+  ["FANDOM", "粉丝文化", "收藏、评论与模仿都是记忆劳动"],
+  ["NOSTALGIA", "怀旧", "连接个人与集体经验，也能成为商业资源"],
+  ["MEMORY", "媒体与记忆", "过去在当下被不断选择、解释与重构"],
 ];
 
 export function ChapterDeck() {
@@ -38,10 +46,10 @@ export function ChapterDeck() {
     {
       id: "opening",
       label: "CHAPTER INTRODUCTION / 章节介绍",
-      title: "INTRODUCING",
-      titleAccent: "CHAPTER 07",
-      description: "简介、论点、结构、分析、评论与书目：以十组档案画面完整梳理《The Madonna Archive》。",
-      className: "deck-opening",
+      title: "THE MADONNA",
+      titleAccent: "ARCHIVE",
+      description: "《媒体与记忆》第七章：名人、衰老与粉丝怀旧。",
+      className: "deck-opening chapter-opening",
       content: (
         <div className="deck-opening-object" aria-hidden="true">
           <div className="deck-paper"><b>MEDIA &amp; MEMORY</b><span>FILE 007 / CHAPTER INTRODUCTION</span><i>01</i></div>
@@ -52,129 +60,153 @@ export function ChapterDeck() {
     {
       id: "overview",
       label: "OVERVIEW / 章节简介",
-      title: "NOT A",
-      titleAccent: "BIOGRAPHY",
-      description: "第七章从“媒介如何再现过去”转向“受众如何参与制造记忆”。研究对象不是麦当娜个人生平，而是围绕她形成的媒介档案、粉丝实践与文化产业。",
+      title: "MEMORY IS",
+      titleAccent: "MADE",
+      description: "本章以麦当娜为研究对象，但重点不是她的个人传记，而是过去如何通过媒介、产业和粉丝在当下被重新组织。",
       content: (
-        <div className="deck-paper-panel chapter-overview-panel">
-          <span className="deck-stamp">CHAPTER 07 · PP. 120–135</span>
-          <p className="deck-lead">谁在建构麦当娜将如何被记住？</p>
-          <p>作者以自身记忆为入口，观察粉丝如何通过观看、评论、收藏、模仿和再叙述，把流行音乐材料变成个人与集体记忆。</p>
-          <small>CASE STUDY / CELEBRITY · AGEING · FAN NOSTALGIA</small>
-        </div>
-      ),
-    },
-    {
-      id: "questions",
-      label: "QUESTIONS / 研究问题",
-      title: "FOUR QUESTIONS",
-      titleAccent: "OPEN THE FILE",
-      description: "这些问题来自章节开篇与后续三种分析模式，构成整章的阅读线索。",
-      content: (
-        <div className="deck-card-grid chapter-question-grid">
-          {researchQuestions.map(([id, title, copy]) => (
-            <article key={id}><span>{id}</span><h2>{title}</h2><p>{copy}</p></article>
-          ))}
+        <div className="chapter-overview-visual">
+          <div className="chapter-overview-copy">
+            <span>CHAPTER SCOPE / 研究范围</span>
+            <p>流行音乐、数字媒体、名人文化与粉丝群体，共同塑造人们对过去的记忆。</p>
+            <small>每一种媒介材料，既记录名人的职业形象，也可能唤起粉丝自己的青春、关系与身份经验。</small>
+          </div>
+          <div className="chapter-material-orbit" aria-label="本章分析的五类媒介材料">
+            <div className="chapter-orbit-core"><b>MEDIA</b><i>×</i><b>MEMORY</b></div>
+            {mediaMaterials.map(([id, en, zh]) => (
+              <div className={`material-node material-node-${id}`} key={id}><span>{id}</span><b>{en}</b><small>{zh}</small></div>
+            ))}
+          </div>
         </div>
       ),
     },
     {
       id: "thesis",
       label: "ARGUMENT / 核心论点",
-      title: "FANS MAKE",
-      titleAccent: "THE ARCHIVE",
-      description: "章节的关键转向：粉丝不是档案之外的被动消费者，而是流行文化记忆的生产者、分类者与传播者。",
+      title: "NO ONE OWNS",
+      titleAccent: "THE PAST",
+      description: "名人的文化记忆不是由某一方单独决定，而是在名人、媒体产业与粉丝的互动中共同建构。",
       content: (
-        <div className="chapter-thesis-map" aria-label="章节核心论证关系图">
-          <div><span>CELEBRITY / 名人</span><p>提供不断重塑的形象、作品与官方档案</p></div>
-          <b>↔</b>
-          <div className="active"><span>FANS / 粉丝</span><p>以情感、收藏、评论和身体实践赋予材料意义</p></div>
-          <b>↔</b>
-          <div><span>INDUSTRY / 产业</span><p>把关注、怀旧与文化遗产重新组织为商品</p></div>
-          <small>媒体平台让三者持续相遇；档案因此是一种协商关系，而不是静止仓库。</small>
+        <div className="chapter-coauthor-map" aria-label="名人文化记忆共同建构关系图">
+          <div className="coauthor-ring" aria-hidden="true" />
+          <article className="coauthor celebrity"><span>01 / CELEBRITY</span><h2>名人</h2><p>通过作品、宣传和经典形象不断重塑自己的过去。</p></article>
+          <article className="coauthor industry"><span>02 / INDUSTRY</span><h2>媒体产业</h2><p>选择、包装并重新发行过去，使记忆成为可流通的文化资源。</p></article>
+          <article className="coauthor fans"><span>03 / FANS</span><h2>粉丝</h2><p>以收藏、评论、分享和模仿，为档案材料赋予个人与集体意义。</p></article>
+          <div className="coauthor-core"><span>THE LIVING ARCHIVE</span><strong>文化记忆</strong><small>持续协商，而非静止仓库</small></div>
+          <p className="coauthor-platform">DIGITAL MEDIA / 数字平台让三方持续相遇，也让任何一方都无法完全控制哪些版本会被记住。</p>
         </div>
       ),
     },
     {
       id: "structure",
       label: "STRUCTURE / 章节结构",
-      title: "FIVE STEPS",
-      titleAccent: "THROUGH THE CHAPTER",
+      title: "THREE TRACKS",
+      titleAccent: "ONE ARGUMENT",
+      description: "章节围绕三个相互关联的主题展开，它们共同回答名人如何被记住。",
       content: (
-        <div className="deck-path chapter-five-path">
-          {chapterPath.map(([id, en, zh, copy, page]) => (
-            <article key={id}><span>{id}</span><h2>{en}<small>{zh}</small></h2><p>{copy}</p><b>PP. {page}</b></article>
+        <div className="chapter-three-tracks" aria-label="章节三部分结构">
+          <div className="track-grooves" aria-hidden="true" />
+          {chapterModes.map(([id, en, zh, copy, tag]) => (
+            <article key={id}>
+              <span>{id}</span><div><small>{tag}</small><h2>{en}<i>{zh}</i></h2><p>{copy}</p></div>
+            </article>
           ))}
+          <b className="track-spindle" aria-hidden="true" />
         </div>
       ),
     },
     {
-      id: "framework",
-      label: "ANALYSIS I / 理论框架",
-      title: "CONSUMING",
-      titleAccent: "IS ALSO MAKING",
-      description: "作者把文化工业批判与粉丝研究并置：商品由产业生产，但意义并不完全由产业决定。",
+      id: "celebrity-memory",
+      label: "ANALYSIS I / 名人与记忆",
+      title: "SYMBOLIC",
+      titleAccent: "IMMORTALITY",
+      description: "官方影像与粉丝实践共同维持名人的文化存在；影响力并不只取决于现实中的个人，也取决于后来的人如何持续回看与解释。",
       content: (
-        <div className="deck-commentary chapter-framework">
-          <div><span>CULTURE INDUSTRY / 文化工业</span><p>唱片、演出与纪念品首先是可购买的商品；官方也能将粉丝贡献重新纳入品牌档案。</p></div>
-          <div><span>POPULAR MEMORY / 流行记忆</span><p>被历史与博物馆忽略的日常流行文化，可以通过收藏和讲述成为理解一代人生活的材料。</p></div>
-          <div><span>FANDOM / 粉丝实践</span><p>粉丝通过使用、热爱与再解释留下“被爱过的痕迹”，有时顺从商品逻辑，有时也会挑战它。</p></div>
+        <div className="chapter-memory-loop">
+          <div className="memory-loop-record"><span>PUBLIC IMAGE</span><b>公众形象</b></div>
+          <ol>
+            {archiveActions.map(([zh, en, copy], index) => (
+              <li key={en}><span>{String(index + 1).padStart(2, "0")}</span><b>{en}<i>{zh}</i></b><p>{copy}</p></li>
+            ))}
+          </ol>
+          <p className="memory-loop-note">粉丝不是档案之外的观众，而是文化记忆的保存者、解释者与传播者。</p>
         </div>
       ),
     },
     {
-      id: "modes",
-      label: "ANALYSIS II / 三种模式",
-      title: "THREE MODES",
-      titleAccent: "ONE LIVING ARCHIVE",
+      id: "ageing",
+      label: "ANALYSIS II / 衰老",
+      title: "THE IMAGE STAYS",
+      titleAccent: "THE BODY AGES",
+      description: "数字档案反复循环年轻形象，而现实身体持续变化；两者之间的距离成为社会评判女性名人的冲突现场。",
       content: (
-        <div className="deck-three-modes chapter-mode-detail">
-          <article><span>MODE 01 · PP. 125–129</span><h2>CELEBRITY<br />&amp; MEMORY</h2><p>共同记忆确认“老粉丝”的身份，也把名人固定为跨世代文化坐标；粉丝与产业共同生产她的象征性永生。</p></article>
-          <article><span>MODE 02 · PP. 129–132</span><h2>AGEING</h2><p>媒体反复保存年轻形象，却要求现实身体“不显老”。身体与面孔因此成为记录、修饰和主动遗忘发生的档案界面。</p></article>
-          <article><span>MODE 03 · PP. 132–135</span><h2>FAN<br />NOSTALGIA</h2><p>怀旧让人借旧歌重建个人生命史，也把旧作品转化为复刻、精选、巡演与品牌遗产的商业资源。</p></article>
+        <div className="chapter-ageing-tension">
+          <article className="ageing-side archive-side"><span>ARCHIVE IMAGE / 档案影像</span><h2>可重复<br />可修饰<br />保持年轻</h2><p>经典照片、服装、舞蹈和视觉风格不断在当下重新出现。</p></article>
+          <div className="ageing-needle" aria-hidden="true"><i /><b /></div>
+          <article className="ageing-side body-side"><span>LIVED BODY / 现实身体</span><h2>会变化<br />会衰老<br />无法冻结</h2><p>未经修饰的照片和网络评论，使名人难以完全控制公众形象。</p></article>
+          <div className="ageing-conflict"><span>GENDERED PRESSURE</span><strong>保存形象</strong><i>≠</i><strong>停止衰老</strong><small>档案既维护文化地位，也可能暴露形象与现实之间的差异。</small></div>
         </div>
       ),
     },
     {
-      id: "evidence",
-      label: "ANALYSIS III / 文本与材料",
-      title: "HOW THE CLAIM",
-      titleAccent: "IS BUILT",
-      description: "章节并非只提出概念，而是让不同媒介材料互相印证。以下四组材料支撑整章论证。",
+      id: "nostalgia",
+      label: "ANALYSIS III / 粉丝怀旧",
+      title: "NOSTALGIA HAS",
+      titleAccent: "THREE SIDES",
+      description: "怀旧不是简单返回过去，而是用旧歌、影像、服装和专辑，在当下重新连接个人经历、共同文化与商业价值。",
       content: (
-        <div className="chapter-evidence-grid">
-          {archiveEvidence.map(([id, title, copy, page]) => (
-            <article key={id}><span>{id}</span><div><h2>{title}</h2><p>{copy}</p></div><small>{page}</small></article>
-          ))}
+        <div className="chapter-nostalgia-triangle" aria-label="怀旧的个人性、集体性与商业性">
+          <svg viewBox="0 0 800 520" role="img" aria-label="三角关系线图"><path d="M400 54 L92 458 L708 458 Z" /><circle cx="400" cy="54" r="9"/><circle cx="92" cy="458" r="9"/><circle cx="708" cy="458" r="9"/></svg>
+          <article className="nostalgia-personal"><span>01 / PERSONAL</span><h2>个人性</h2><p>唤起青春、关系与身份变化。</p></article>
+          <article className="nostalgia-collective"><span>02 / COLLECTIVE</span><h2>集体性</h2><p>把私人经历连接到共同文化记忆。</p></article>
+          <article className="nostalgia-commercial"><span>03 / COMMERCIAL</span><h2>商业性</h2><p>旧作品被重新包装并获得新的市场价值。</p></article>
+          <div className="nostalgia-core"><span>FAN NOSTALGIA</span><b>真实情感</b><i>×</i><b>产业利用</b></div>
+        </div>
+      ),
+    },
+    {
+      id: "archive-duality",
+      label: "SYNTHESIS / 数字档案",
+      title: "THE ARCHIVE",
+      titleAccent: "CUTS BOTH WAYS",
+      description: "档案不是中性的储存空间。它在保存文化遗产的同时，也保存未经选择的材料、负面评价和公众争议。",
+      content: (
+        <div className="chapter-archive-duality">
+          <article className="archive-protect"><span>SIDE A / PRESERVE</span><h2>保存</h2><ul><li>让历史作品持续可见</li><li>维持名人的文化影响力</li><li>支持粉丝形成共同记忆</li></ul></article>
+          <div className="archive-duality-record" aria-hidden="true"><span>A</span><i /><span>B</span></div>
+          <article className="archive-expose"><span>SIDE B / EXPOSE</span><h2>暴露</h2><ul><li>保留未经修饰的影像</li><li>延长负面评价的传播</li><li>削弱名人对形象的控制</li></ul></article>
+          <p>数字媒介改变的并不只是“存了多少”，更是<strong>谁能保存、谁能解释、谁决定什么被重新看见</strong>。</p>
         </div>
       ),
     },
     {
       id: "commentary",
-      label: "COMMENTARY / 评论",
-      title: "READ WITH",
-      titleAccent: "A CRITICAL EYE",
-      description: "以下为本项目基于原章所作的评论，不作为作者原话。",
+      label: "COMMENTARY / 批判性评论",
+      title: "READ THE FILE",
+      titleAccent: "WITH FRICTION",
+      description: "前三项是文档归纳的章节贡献；后两项是阅读本章时需要保留的方法意识。",
       content: (
-        <div className="deck-commentary chapter-final-commentary">
-          <div><span>VALUE / 价值</span><p>把私人回忆、粉丝实践、女性身体和文化工业放进同一套关系，说明“档案”不是物品集合，而是持续发生的权力与情感实践。</p></div>
-          <div><span>LIMIT / 方法限制</span><p>材料多来自公开评论、新闻与作者自身经验，缺少系统的受访者样本；因此更适合作为探索性案例，而不是代表全部粉丝。</p></div>
-          <div><span>UPDATE / 当代补充</span><p>本章写于 2011 年。今天还需追问算法推荐、平台下架、版权封锁与生成式影像，如何重新决定哪些版本可见、可信并被记住。</p></div>
+        <div className="chapter-critical-ledger">
+          {criticalReading.map(([type, title, copy], index) => (
+            <article className={index < 3 ? "contribution" : "limitation"} key={type}>
+              <span>{type}</span><h2>{title}</h2><p>{copy}</p>
+            </article>
+          ))}
+          <div className="critical-key"><span>AUTHOR&apos;S ARGUMENT / 作者论点</span><span>PROJECT COMMENTARY / 项目评论</span></div>
         </div>
       ),
     },
     {
-      id: "references",
-      label: "REFERENCES / 参考与延伸阅读",
-      title: "KEEP READING",
-      titleAccent: "BEYOND THE FILE",
-      description: "主文献与作者在第七章末尾推荐的延伸阅读。以下书目均来自原章第 135 页。",
+      id: "summary",
+      label: "SUMMARY / 章节总结",
+      title: "WHAT TO",
+      titleAccent: "REMEMBER",
+      description: "本章最重要的结论：记忆不是过去的简单复制，而是人们在当下围绕身份、年龄、情感与文化价值持续进行的协商。",
       content: (
-        <div className="chapter-reference-list">
-          <article className="primary"><span>PRIMARY SOURCE / 主文献</span><h2>GARDE-HANSEN, JOANNE</h2><p><i>Media and Memory</i>, Chapter 7: “The Madonna Archive: Celebrity, Ageing and Fan Nostalgia.” Edinburgh University Press, 2011, pp. 120–135.</p></article>
-          {furtherReading.map(([id, author, title, year]) => (
-            <article key={id}><span>{id} / {year}</span><h2>{author}</h2><p>{title}</p></article>
+        <div className="chapter-summary-index">
+          {summaryIndex.map(([en, zh, point], index) => (
+            <article key={en}><span>{String(index + 1).padStart(2, "0")}</span><b>{en}<i>{zh}</i></b><p>{point}</p></article>
           ))}
+          <footer><span>PRIMARY TEXT</span><p>Joanne Garde-Hansen · <i>Media and Memory</i> · Chapter 7 “The Madonna Archive”</p></footer>
         </div>
       ),
     },
