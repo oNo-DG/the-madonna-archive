@@ -9,6 +9,7 @@ export type PracticeCase = {
   image: string;
   imageAlt: string;
   imagePosition?: string;
+  imageFit?: "cover" | "contain";
   fact: string;
   practice: string;
   relation: string;
@@ -40,7 +41,7 @@ export const practiceCases: PracticeCase[] = [
     id: "C-03", year: "2023—", title: "Eyes of the Storm",
     maker: "Paul McCartney · partner museums", medium: "私人摄影档案与巡回展览",
     category: "PRACTICE PROJECT", categoryZh: "实践项目",
-    image: "/images/cases/eyes-of-the-storm.jpg", imageAlt: "Paul McCartney Photographs 1963–64: Eyes of the Storm 展览海报", imagePosition: "50% 44%",
+    image: "/images/cases/eyes-of-the-storm.jpg", imageAlt: "Paul McCartney Photographs 1963–64: Eyes of the Storm 展览海报", imagePosition: "50% 44%", imageFit: "contain",
     fact: "展览从 Paul McCartney 重新发现的 1963—64 年底片出发，以 250 余张照片呈现披头士走向全球知名度时的旅行、后台与私人瞬间。",
     practice: "照片按城市与行程组成时间叙事，把公众熟悉的 Beatlemania 与成员视角下的朋友、车厢、酒店和人群并置，让私人镜头成为历史入口。",
     relation: "项目说明个人记忆可以补写大众媒体图像：名人既是被观看的对象，也是记录集体事件的主体。",
@@ -60,7 +61,7 @@ export const practiceCases: PracticeCase[] = [
     id: "C-05", year: "2012—", title: "Grateful Dead Archive Online",
     maker: "UC Santa Cruz University Library", medium: "参与式数字档案研究",
     category: "DESIGN RESEARCH", categoryZh: "设计研究",
-    image: "/images/cases/grateful-dead-archive.jpg", imageAlt: "Grateful Dead Archive Online 官方档案照片", imagePosition: "50% 42%",
+    image: "/images/cases/grateful-dead-archive.jpg", imageAlt: "Grateful Dead Archive Online 官方档案照片", imagePosition: "50% 42%", imageFit: "contain",
     fact: "这是一个将海报、照片、录音、信件、同人刊物与乐迷材料数字化的开放研究平台，线上提供数万件可检索档案。",
     practice: "平台把机构馆藏与用户参与放在同一系统中：访客可以浏览、标记、评论、分享并贡献内容，使元数据和社群记忆持续生长。",
     relation: "它为“活档案”提供方法模型：粉丝不是被研究的对象，而是共同描述、补充与传播文化记忆的合作者。",

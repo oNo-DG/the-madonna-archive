@@ -1,6 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { ImmersiveDeck, type DeckSlide } from "@/components/layout/ImmersiveDeck";
+
+const madonnaVinyl = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/hero-vinyl.png`;
 
 const mediaMaterials = [
   ["01", "MUSIC VIDEO", "音乐录像"],
@@ -51,9 +54,14 @@ export function ChapterDeck() {
       description: "《媒体与记忆》第七章：名人、衰老与粉丝怀旧。",
       className: "deck-opening chapter-opening",
       content: (
-        <div className="deck-opening-object" aria-hidden="true">
-          <div className="deck-paper"><b>MEDIA &amp; MEMORY</b><span>FILE 007 / CHAPTER INTRODUCTION</span><i>01</i></div>
-          <div className="deck-record"><span>07</span></div>
+        <div className="deck-opening-object chapter-opening-object" aria-hidden="true">
+          <div className="chapter-opening-traces">
+            <div className="chapter-trace chapter-trace-left"><Image src={madonnaVinyl} alt="" width={1200} height={1200} /></div>
+            <div className="chapter-trace chapter-trace-right"><Image src={madonnaVinyl} alt="" width={1200} height={1200} /></div>
+            <span>MADONNA / IMAGE TRACE / 1984—2010</span>
+          </div>
+          <div className="deck-paper chapter-opening-paper"><b>MEDIA &amp; MEMORY</b><span>FILE 007 / CHAPTER INTRODUCTION</span><i>01</i></div>
+          <div className="chapter-opening-record"><Image src={madonnaVinyl} alt="" width={1200} height={1200} priority /><span>07</span></div>
         </div>
       ),
     },

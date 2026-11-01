@@ -21,17 +21,19 @@ export function CaseDeck() {
       description: item.maker,
       className: "case-deck-scene",
       content: <div className="case-deck-stage">
-        <div className="case-deck-outline-record" aria-hidden="true" />
         <div className="case-deck-file">
           <div className="case-visual-window">
-            <Image
-              src={`${basePath}${item.image}`}
-              alt={item.imageAlt}
-              fill
-              sizes="(max-width: 900px) 100vw, 48vw"
-              style={{ objectPosition: item.imagePosition }}
-            />
+            <div className={`case-project-image case-project-image-${item.imageFit ?? "cover"}`}>
+              <Image
+                src={`${basePath}${item.image}`}
+                alt={item.imageAlt}
+                fill
+                sizes="(max-width: 900px) 62vw, 34vw"
+                style={{ objectPosition: item.imagePosition, objectFit: item.imageFit ?? "cover" }}
+              />
+            </div>
             <div className="case-image-wash" aria-hidden="true" />
+            <div className="case-deck-outline-record" aria-hidden="true" />
             <div className="case-deck-record" aria-hidden="true"><span>{String(index + 1).padStart(2, "0")}</span></div>
             <div className="case-deck-tonearm" aria-hidden="true" />
             <div className="case-deck-playing" aria-hidden="true"><i /> PLAYING / CASE {String(index + 1).padStart(2, "0")}</div>
