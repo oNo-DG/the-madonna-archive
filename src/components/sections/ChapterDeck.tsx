@@ -180,7 +180,6 @@ export function ChapterDeck() {
       content: (
         <div className="chapter-archive-duality">
           <article className="archive-protect"><span>SIDE A / PRESERVE</span><h2>保存</h2><ul><li>让历史作品持续可见</li><li>维持名人的文化影响力</li><li>支持粉丝形成共同记忆</li></ul></article>
-          <div className="archive-duality-record" aria-hidden="true"><span>A</span><i /><span>B</span></div>
           <article className="archive-expose"><span>SIDE B / EXPOSE</span><h2>暴露</h2><ul><li>保留未经修饰的影像</li><li>延长负面评价的传播</li><li>削弱名人对形象的控制</li></ul></article>
           <p>数字媒介改变的并不只是“存了多少”，更是<strong>谁能保存、谁能解释、谁决定什么被重新看见</strong>。</p>
         </div>
