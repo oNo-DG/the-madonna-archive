@@ -250,7 +250,7 @@ a { text-decoration: none; }
 .record-home-title p { margin: 0; color: #c0b2a1; }
 .record-home-title .record-home-summary { margin-top: 9px; font-family: Arial,"Noto Sans SC",sans-serif; font-size: clamp(14px,1vw,17px); letter-spacing: .06em; color: #b8b8b4; text-shadow: 0 2px 8px #000; }
 .record-entry-menu { width: min(92vw,1040px); display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; opacity: 0; animation: record-menu-in .55s 2.1s ease forwards; }
-.entry-menu-label { grid-column: 1 / -1; padding-bottom: 9px; border-bottom: 1px solid rgba(220,220,216,.34); color: #b8b8b5; font: clamp(11px,.78vw,13px) "Courier New",monospace; letter-spacing: .14em; text-align: center; }
+.entry-menu-label { grid-column: 1 / -1; padding-bottom: 12px; border-bottom: 1px solid rgba(220,220,216,.42); color: #c8c8c4; font: clamp(16px,1.15vw,20px)/1.35 "Courier New",monospace; letter-spacing: .13em; text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,.78); }
 .record-entry { position: relative; min-height: clamp(64px,5.4vw,82px); padding: clamp(10px,1.15vw,15px) clamp(12px,1.45vw,19px); display: grid; grid-template-columns: clamp(24px,2.2vw,32px) 9px auto; grid-template-rows: auto auto; column-gap: clamp(8px,.9vw,12px); align-items: center; border: 1px solid rgba(222,222,218,.52); color: #e2e2df; background: rgba(18,18,18,.82); backdrop-filter: blur(5px); transition: color .16s, background .16s, transform .16s, border-color .16s; }
 .record-entry > span { grid-row: 1 / 3; font: clamp(12px,.84vw,14px) "Courier New",monospace; color: #aaa; }
 .record-entry > i { grid-row: 1 / 3; width: 8px; aspect-ratio: 1; border: 1px solid #aaa; border-radius: 50%; box-shadow: 0 0 0 5px rgba(190,190,186,.08); }
@@ -521,7 +521,7 @@ a { text-decoration: none; }
   .record-home-title h1 { font-size: clamp(33px,9.6vw,50px); }
   .record-home-title span, .record-home-title p { font-size: 8px; }
   .record-entry-menu { width: 100%; gap: 5px; animation-name: record-menu-mobile-in; }
-  .entry-menu-label { padding-bottom: 6px; font-size: 8px; }
+  .entry-menu-label { padding-bottom: 8px; font-size: 13px; }
   .record-entry { width: auto; min-height: 58px; padding: 9px 8px; grid-template-columns: 19px 7px 1fr; column-gap: 6px; }
   .record-entry strong { font-size: 14px; }
   .record-entry small { display: none; }
@@ -613,7 +613,7 @@ a { text-decoration: none; }
   .record-home-title h1 { font-size: clamp(26px,8vw,34px); letter-spacing: -.07em; }
   .record-home-title .record-home-summary { margin-top: 6px; font-size: 10px; line-height: 1.45; }
   .record-entry-menu { grid-template-columns: 1fr; gap: 5px; }
-  .entry-menu-label { padding-bottom: 4px; }
+  .entry-menu-label { padding-bottom: 6px; font-size: 12px; }
   .record-entry { min-height: 46px; padding: 7px 11px; grid-template-columns: 24px 8px 1fr; column-gap: 8px; }
   .record-entry strong { font-size: 15px; }
   .record-entry small { display: block; font-size: 8px; }
